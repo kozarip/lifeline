@@ -137,5 +137,10 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "./node_modules/.bin/commitlint -e -g ./commitlint.config.js"
+    }
   }
 }

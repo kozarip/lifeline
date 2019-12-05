@@ -1,15 +1,33 @@
 import React from 'react';
+import { Link } from 'react-scroll';
+
 
 const Header: React.FC = () => {
   return (
     <header>
-      <h1>This is the lifeway</h1>
-      <div>
-        <a>Registration</a>
-        <a>Sign in</a>
+      <div className="borderKeeper"></div>
+      <div className="wideCenter">
+        <a className="logo" href="#">
+          <img src="#" title="Mesélő képek" />
+        </a>
+        <ul className="menu">
+          <li>
+            <Link activeClass="active" to="introduce" spy={true} smooth={true} offset={-50} duration={500}>
+              Bemutatkozás
+            </Link>
+          </li>
+          <li>
+            <Link activeClass="active" to="howWork" spy={true} smooth={true} offset={-50} duration={500}>
+              Hogyan működik?
+            </Link>
+          </li>
+          <li><a href="#prices">Áraink</a></li>
+          <li><a href="#contact">Kapcsolat</a></li>
+          <li><a className="profileMenuPoint" href="profile">Profilom</a></li>
+        </ul>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

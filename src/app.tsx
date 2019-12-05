@@ -5,24 +5,32 @@ import {
   Route
 } from 'react-router-dom';
 import Header from './components/header/header';
-import Home from './components/home/home';
+
+import Introduce from './components/home/introduce';
+import HowWork from './components/home/how-work';
+import Prices from './components/home/prices';
+import Contact from './components/home/contact';
+
 import Editor from './components/editor/editor';
 import './app.css';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="App">
         <Header />
         <Switch>
-          <Route path='/editor'>
+          <Route path="/editor">
             <Editor />
           </Route>
-          <Route path='/'>
-            <Home />
+          <Route path="/">
+          <div id="homeContainer">
+            <Introduce />
+            <HowWork />
+            <Prices />
+            <Contact />
+            </div>
           </Route>
         </Switch>
-      </div>
     </Router>
   );
 };

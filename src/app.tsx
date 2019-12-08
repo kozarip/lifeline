@@ -8,6 +8,8 @@ import Header from './components/header/header';
 
 import Introduce from './components/home/introduce';
 import HowWork from './components/home/how-work';
+import Functions from './components/home/functions';
+import Reviews from './components/home/reviews';
 import Prices from './components/home/prices';
 import Contact from './components/home/contact';
 
@@ -26,6 +28,8 @@ const App: React.FC = () => {
           <div id="homeContainer">
             <Introduce />
             <HowWork />
+            <Functions />
+            <Reviews />
             <Prices />
             <Contact />
             </div>

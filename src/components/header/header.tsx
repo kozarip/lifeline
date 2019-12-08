@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <div className="borderKeeper"></div>
-      <div className="wideCenter">
+      <div className="wideHomeBox">
         <a className="logo" href="#">
           <img src="#" title="Mesélő képek" />
         </a>
@@ -19,6 +19,16 @@ const Header: React.FC = () => {
           <li>
             <Link activeClass="active" to="howWork" spy={true} smooth={true} offset={-50} duration={500}>
               Hogyan működik?
+            </Link>
+          </li>
+          <li>
+            <Link activeClass="active" to="functions" spy={true} smooth={true} offset={-50} duration={500}>
+              Lehetőségek
+            </Link>
+          </li>
+          <li>
+            <Link activeClass="active" to="reviews" spy={true} smooth={true} offset={-50} duration={500}>
+              Vélemények
             </Link>
           </li>
           <li><a href="#prices">Áraink</a></li>

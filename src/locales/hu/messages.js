@@ -1,0 +1,1 @@
+/* eslint-disable */module.exports={languageData:{"plurals":function(n,ord){if(ord)return n==1||n==5?"one":"other";return n==1?"one":"other"}},messages:{"Mi is a Mes\xE9l\u0151 k\xE9pek?":"Mi is a Mes\xE9l\u0151 k\xE9pek?"}};

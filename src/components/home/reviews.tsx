@@ -7,6 +7,7 @@ const Reviews: React.FC = () => {
     <Element name="reviews" className="homeBox reviesBox">
       <h2 className="boxTitle">Rólunk mondtátok / Vélemények</h2>
       <div className="testimonialContainer">
+        <img className="quote" src={require('../../images/quote.png')} />
         <Slider
           className="narrowHomeBox"
           autoplay={true}

@@ -34,7 +34,7 @@ const App: React.FC = () => {
     <I18nProvider language="hu" catalogs={catalogs}>
       <StickyContainer>
         <Router>
-        <Sticky>{({ style }) => <div style={style}><Header /></div>}</Sticky>
+        <Sticky>{({ style }) => <div style={{...style, zIndex: 9999}}><Header /></div>}</Sticky>
             <Switch>
               <Route path="/editor">
                 <Editor />

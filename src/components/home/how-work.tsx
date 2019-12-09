@@ -42,7 +42,7 @@ const howWork: React.FC = () => {
           </div>
         </div>
       </div>
-      <Link to="/editor" className="start">start</Link>
+      <Link to="/editor" className="btn">start</Link>
     </Element>
   )
 }

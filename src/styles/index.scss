@@ -7,7 +7,7 @@ body{
   font-size: 20px;
   font-weight: lighter;
   color: #888888;
-  padding-bottom: 30px;
+  padding: 0 0 30px 0;
 }
 
 .wideHomeBox{
@@ -22,9 +22,12 @@ body{
 
 .componentTitle{
   margin: 25px 0 35px 0;
-  font-size: 63px;
+  font-size: 44px;
   font-weight: bold;
   color: $highlight-color;
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: 63px;
+  }
 }
 
 h3{
@@ -42,7 +45,6 @@ p{
   position: relative;
   width: 370px;
   height: 370px;
-  margin: 0 90px 0 0;
   border-radius: 50%;
   background-color: #fff;
   img{
@@ -126,7 +128,6 @@ header{
   }
 }
 
-
 .introduceContainer{
   font-size: 30px;
 
@@ -145,31 +146,33 @@ header{
     background-color: #fff;
     .howWorkStep{
       flex-direction: row-reverse;
-      height: 445px;
+      height: auto;
 
-      @media screen and (max-width: $tablet-breakpoint) {
-        height: auto;
+      @media screen and (min-width: $tablet-breakpoint) {
+        height: 445px;
       }
     }
     .circle{
-      margin: 0 0 0 90px;
+      margin: 0 0 0 30px;
       background-color: $background-color;
-      @media screen and (max-width: $tablet-breakpoint) {
-        margin-left: 30px;
+      @media screen and (min-width: $tablet-breakpoint) {
+        margin-left: 90px;
       }
     }
   }
 
   .howWorkStep{
-    height: 340px;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-flow: wrap;
+    justify-content: space-around;
 
-    @media screen and (max-width: $tablet-breakpoint) {
-      height: auto;
-      flex-flow: wrap;
-      justify-content: space-around;
+    @media screen and (min-width: $tablet-breakpoint) {
+      height: 340px;
+      flex-flow: inherit;
+      justify-content: inherit;
     }
 
     .stepContent{
@@ -178,10 +181,10 @@ header{
       justify-content: center;
       flex-direction: column;
       min-height: 340px;
-      text-align: left;
+      text-align: center;
       margin: 0 15px;
-      @media screen and (max-width: $tablet-breakpoint) {
-        text-align: center;
+      @media screen and (min-width: $tablet-breakpoint) {
+        text-align: left;
       }
 
       .h3{
@@ -191,9 +194,9 @@ header{
 
     .circle{
       min-width: 370px;
-      margin-top: -15px;
-      @media screen and (max-width: $tablet-breakpoint) {
-        margin: 30px 0 0 0;
+      margin-top: 30px;
+      @media screen and (min-width: $tablet-breakpoint) {
+        margin-top: -15px;
       }
     }
   }
@@ -273,10 +276,13 @@ header{
     position: relative;;
     margin-top: 50px;
     margin-bottom: 50px;
-    padding: 65px 90px 60px 90px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 20px;
     font-weight: lighter;
+    @media screen and (min-width: $tablet-breakpoint) {
+      padding: 65px 90px 60px 90px;
+    }
 
     &:after{
       content:" ";
@@ -293,15 +299,26 @@ header{
     .author{
       float: right;
       font-weight: bold;
-      margin-right: -30px;
+      margin-right: 0;
+      margin-bottom: 10px;
       font-weight: bold;
+      @media screen and (min-width: $tablet-breakpoint) {
+        margin-right: -30px;
+        margin-bottom: 30px;
+      }
     }
   }
 
   .quote{
     position: absolute;
-    right: 22%;
-    top: -48px;
+    right: 9%;
+    top: -32px;
+    max-width: 50px;
+    @media screen and (min-width: $tablet-breakpoint) {
+      right: 16%;
+      top: -48px;
+      max-width: initial;
+    }
   }
 
   .slick-slider{
@@ -333,14 +350,17 @@ header{
   font-weight: lighter;
 
   form{
-    width: 100%;
+    width: auto;
     margin-top: 40px;
     padding: 40px 20px 0 20px;
     background-color: $background-color;
+    @media screen and (min-width: $tablet-breakpoint) {
+      width: 100%;
+    }
 
     .textBox,
     textarea{
-      width: 100%;
+      width: auto;
       margin-bottom: 30px;
       padding-left: 15px;
       padding-right: 15px;
@@ -348,6 +368,9 @@ header{
       border: none;
       font-size: 30px;
       font-weight: bold;
+      @media screen and (min-width: $tablet-breakpoint) {
+        width: 100%;
+      }
 
       &::placeholder{
         color: #d4d4d4;

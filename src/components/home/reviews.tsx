@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 
 const Reviews: React.FC = () => {
   return (
-    <Element name="reviews" className="homeBox reviesBox">
+    <Element name="reviews" className="homeBox reviewBox">
       <h2 className="boxTitle">Rólunk mondtátok / Vélemények</h2>
       <div className="testimonialContainer">
         <img className="quote" src={require('../../images/quote.png')} />

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Element } from 'react-scroll'
 
-const Prices: React.FC = () => {
+const Products: React.FC = () => {
   return (
-    <Element name="prices" className="homeBox wideHomeBox productsContainer">
-      <h2 className="boxTitle">Áraink</h2>
+    <Element name="products"
+      className="componentContainer wideHomeBox productsContainer">
+      <h2 className="componentTitle">Áraink</h2>
       <div className="productsBox">
         <div className="product">
           <img src=""></img>
@@ -53,4 +54,4 @@ const Prices: React.FC = () => {
   )
 }
 
-export default Prices;
+export default Products;

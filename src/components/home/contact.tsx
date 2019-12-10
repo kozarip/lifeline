@@ -3,8 +3,9 @@ import { Element } from 'react-scroll';
 
 const Contact: React.FC = () => {
   return (
-    <Element name="contact" className="homeBox contactBox">
-      <h2 className="boxTitle">Lépj velünk kapcsolatba!</h2>
+    <Element name="contact"
+      className="componentContainer contactContainer">
+      <h2 className="componentTitle">Lépj velünk kapcsolatba!</h2>
       <p className="narrowHomeBox" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
       <form>
         <input className="narrowHomeBox textBox"  type="text" name="name" placeholder="Neved" />

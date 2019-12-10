@@ -17,7 +17,7 @@ import Introduce from './components/home/introduce';
 import HowWork from './components/home/how-work';
 import Functions from './components/home/functions';
 import Reviews from './components/home/reviews';
-import Prices from './components/home/prices';
+import Products from './components/home/products';
 import Contact from './components/home/contact';
 
 import Editor from './components/editor/editor';
@@ -46,7 +46,7 @@ const App: React.FC = () => {
                 <Functions />
                 <Reviews />
                 <Contact />
-                <Prices />
+                <Products />
               </div>
               </Route>
             </Switch>

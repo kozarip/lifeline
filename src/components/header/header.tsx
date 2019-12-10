@@ -31,12 +31,12 @@ const Header: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link activeClass="active" to="reviews" spy={true} smooth={true} offset={-150} duration={1500}>
+            <Link activeClass="active" to="contact" spy={true} smooth={true} offset={-150} duration={1500}>
               Kapcsolat
             </Link>
           </li>
           <li>
-            <Link activeClass="active" to="prices" spy={true} smooth={true} offset={-150} duration={1500}>
+            <Link activeClass="active" to="products" spy={true} smooth={true} offset={-150} duration={1500}>
               Áraink
             </Link>
           </li>

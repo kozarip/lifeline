@@ -3,9 +3,9 @@ import { Element } from 'react-scroll'
 
 const Functions: React.FC = () => {
   return (
-    <Element name="functions"className="functionsContainer homeBox wideHomeBox" >
-      <h2 className="boxTitle">Funkciók / Lehetőségek</h2>
-      <div className="functions">
+    <Element name="functions"className="functionsContainer componentContainer wideHomeBox" >
+      <h2 className="componentTitle">Funkciók / Lehetőségek</h2>
+      <div className="functionsBox">
         <div className="function">
           <div className="circle" ></div>
           <h3>Funkció 1.</h3>

@@ -4,10 +4,11 @@ import { Element } from 'react-scroll'
 
 const howWork: React.FC = () => {
   return (
-    <Element name="howWork" className="homeBox">
-      <h2 className="boxTitle">Hogyan működik?</h2>
-      <div className="workStepContainer">
-        <div className="workStep wideHomeBox">
+    <Element name="howWork"
+      className="componentContainer">
+      <h2 className="componentTitle">Hogyan működik?</h2>
+      <div className="howWorkStepContainer">
+        <div className="howWorkStep wideHomeBox">
           <div className="circle">
             <img src={require("../../images/step1.png")} />
           </div>
@@ -17,8 +18,8 @@ const howWork: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="workStepContainer whiteWorkStepContainer">
-        <div className="workStep wideHomeBox">
+      <div className="howWorkStepContainer whiteWorkStepContainer">
+        <div className="howWorkStep wideHomeBox">
           <div className="circle">
             <img src={require("../../images/step2.png")} />
           </div>
@@ -28,8 +29,8 @@ const howWork: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="workStepContainer">
-        <div className="workStep wideHomeBox">
+      <div className="howWorkStepContainer">
+        <div className="howWorkStep wideHomeBox">
           <div className="circle">
             <img src={require("../../images/step3.png")} />
           </div>
@@ -39,8 +40,8 @@ const howWork: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="workStepContainer whiteWorkStepContainer">
-        <div className="workStep wideHomeBox">
+      <div className="howWorkStepContainer whiteWorkStepContainer">
+        <div className="howWorkStep wideHomeBox">
           <div className="circle">
             <img src={require("../../images/step4.png")} />
           </div>

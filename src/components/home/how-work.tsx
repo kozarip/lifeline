@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Element } from 'react-scroll'
 
 const howWork: React.FC = () => {
   return (
-    <Element name="howWork"
+    <section id="howWorkContainer"
       className="componentContainer">
       <h2 className="componentTitle">Hogyan működik?</h2>
       <div className="howWorkStepContainer">
@@ -52,7 +51,7 @@ const howWork: React.FC = () => {
         </div>
       </div>
       <Link to="/editor" className="btn">start</Link>
-    </Element>
+    </section>
   )
 }
 

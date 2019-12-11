@@ -3,8 +3,8 @@ import { Element } from 'react-scroll'
 
 const Products: React.FC = () => {
   return (
-    <Element name="products"
-      className="componentContainer wideHomeBox productsContainer">
+    <section id="productsContainer"
+      className="componentContainer wideHomeBox">
       <h2 className="componentTitle">Áraink</h2>
       <div className="productsBox">
         <div className="product">
@@ -62,7 +62,7 @@ const Products: React.FC = () => {
           <span className="price">15 000 Ft</span>
         </div>
         </div>
-    </Element>
+    </section>
   )
 }
 

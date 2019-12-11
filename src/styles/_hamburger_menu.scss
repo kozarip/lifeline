@@ -26,6 +26,7 @@
 .bm-cross-button {
   height: 24px;
   width: 24px;
+  right: 35px;
 }
 
 /* Color/shape of close button cross */
@@ -67,6 +68,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item {
   display: inline-block;
   margin-bottom: 10px;
+}
+
+.bm-item.menu{
+  margin-top: 0;
+
+  li{
+    margin-bottom: 10px;
+  }
 }
 
 /* Styling of overlay */

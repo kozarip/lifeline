@@ -1,11 +1,10 @@
 import React from 'react'
-import { Element } from 'react-scroll'
 import Slider from 'react-slick'
 
 const Reviews: React.FC = () => {
   return (
-    <Element name="reviews"
-      className="componentContainer reviewContainer">
+    <section id="reviewsContainer"
+      className="componentContainer reviewsContainer">
       <h2 className="componentTitle">Rólunk mondtátok / Vélemények</h2>
       <div className="testimonialsBox">
         <img className="quote" src={require('../../images/quote.png')} />
@@ -37,7 +36,7 @@ const Reviews: React.FC = () => {
           </div>
         </Slider>
         </div>
-    </Element>
+    </section>
   )
 }
 

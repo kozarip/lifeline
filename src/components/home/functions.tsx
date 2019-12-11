@@ -3,7 +3,7 @@ import { Element } from 'react-scroll'
 
 const Functions: React.FC = () => {
   return (
-    <Element name="functions"className="functionsContainer componentContainer wideHomeBox" >
+    <section id="functionsContainer"className="componentContainer wideHomeBox" >
       <h2 className="componentTitle">Funkciók / Lehetőségek</h2>
       <div className="functionsBox">
         <div className="function">
@@ -37,7 +37,7 @@ const Functions: React.FC = () => {
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet libero non neque vulputate tincidunt.</p>
         </div>
         </div>
-    </Element>
+    </section>
   )
 }
 

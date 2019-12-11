@@ -13,11 +13,15 @@ const Products: React.FC = () => {
           <h4>Termék 1</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           <table>
-            <tr><th>Paraméterek/Részletek</th></tr>
-            <tr><td>Megnevezés</td></tr>
-            <tr><td>Méret</td></tr>
-            <tr><td>Anyaga</td></tr>
-            <tr><td>Technológia</td></tr>
+            <thead>
+              <tr><th>Paraméterek/Részletek</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Megnevezés</td></tr>
+              <tr><td>Méret</td></tr>
+              <tr><td>Anyaga</td></tr>
+              <tr><td>Technológia</td></tr>
+            </tbody>
           </table>
           <span className="price">15 000 Ft</span>
         </div>
@@ -27,11 +31,15 @@ const Products: React.FC = () => {
           <h4>Termék 2</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           <table>
-            <tr><th>Paraméterek/Részletek</th></tr>
-            <tr><td>Megnevezés</td></tr>
-            <tr><td>Méret</td></tr>
-            <tr><td>Anyaga</td></tr>
-            <tr><td>Technológia</td></tr>
+            <thead>
+              <tr><th>Paraméterek/Részletek</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Megnevezés</td></tr>
+              <tr><td>Méret</td></tr>
+              <tr><td>Anyaga</td></tr>
+              <tr><td>Technológia</td></tr>
+            </tbody>
           </table>
           <span className="price">15 000 Ft</span>
         </div>
@@ -41,11 +49,15 @@ const Products: React.FC = () => {
           <h4>Termék 3</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           <table>
-            <tr><th>Paraméterek/Részletek</th></tr>
-            <tr><td>Megnevezés</td></tr>
-            <tr><td>Méret</td></tr>
-            <tr><td>Anyaga</td></tr>
-            <tr><td>Technológia</td></tr>
+            <thead>
+              <tr><th>Paraméterek/Részletek</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Megnevezés</td></tr>
+              <tr><td>Méret</td></tr>
+              <tr><td>Anyaga</td></tr>
+              <tr><td>Technológia</td></tr>
+            </tbody>
           </table>
           <span className="price">15 000 Ft</span>
         </div>

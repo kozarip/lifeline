@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import 'variables';
+@import 'hamburger_menu';
 
 body{
   margin: 0;
@@ -85,15 +86,17 @@ header{
     width: 100%;
     padding-top: 60px;
     border-bottom: 1px solid #c9c9c9;
+    background: #fff;
   }
 
   .logo{
     flex: 1 0;
     max-width: 270px;
+    z-index: 99;
   }
 }
 .menu{
-  display: block;
+  display: none;
   flex: 1 1;
   margin: 60px 0 0 0;
   padding: 8px 0;
@@ -101,23 +104,27 @@ header{
   text-align: right;
   font-size: 18px;
 
+  @media screen and (min-width: $tablet-breakpoint) {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   li{
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    margin-left: 13px;
 
     a{
       color: #888888;
       text-decoration: none;
       cursor: pointer;
-
-      &.profileMenuPoint{
-        padding: 3px 10px;
-        background-color: $highlight-color;
-        color: #fff;
-      }
     }
   }
+}
+.profileMenuPoint{
+  padding: 3px 10px;
+  background-color: $highlight-color;
+  color: #fff;
+  text-decoration: none;
 }
 
 #homeContainer{
@@ -135,6 +142,7 @@ header{
     width: 100%;
   }
 }
+
 
 .howWorkStepContainer{
   background-color: $background-color;

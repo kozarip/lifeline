@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { IThemeEditorState } from '../../interfaces/IThemeEditor';
+import { IThemeEditorStates } from 'interfaces/IThemeEditor';
 
 import ImagePicker from 'react-image-picker'
 import 'react-image-picker/dist/index.css'
 
-import theme1 from '../../images/themes/theme1.jpg';
-import theme2 from '../../images/themes/theme2.png';
+import theme1 from 'images/themes/theme1.jpg';
+import theme2 from 'images/themes/theme2.png';
 
 const imageList = [theme1, theme2];
 
-class ThemeEditor extends React.Component<{}, IThemeEditorState> {
+class ThemeEditor extends React.Component<{}, IThemeEditorStates> {
   constructor(props) {
     super(props)
     this.state = {

@@ -1,4 +1,4 @@
-export interface IThemeEditorState {
+export interface IThemeEditorStates {
   image: IThemeEditorImage;
 }
 

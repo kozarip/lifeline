@@ -9,6 +9,7 @@ body{
   font-weight: lighter;
   color: #888888;
   padding: 0 0 30px 0;
+  /* overflow-x: hidden; */
 }
 
 .wideHomeBox{
@@ -68,6 +69,12 @@ p{
   text-transform: uppercase;
   text-decoration: none;
   border: none;
+}
+.smallBtn{
+  font-size: 30px;
+  text-transform: none;
+  margin-bottom: 30px;
+  padding: 10px 43px;
 }
 
 header{
@@ -393,13 +400,6 @@ header{
       display: block;
       padding-top: 20px;
     }
-
-    .btn{
-      font-size: 30px;
-      text-transform: none;
-      margin-bottom: 30px;
-      padding: 10px 43px;
-    }
   }
 }
 
@@ -449,6 +449,13 @@ header{
       text-align: left;
       background-color: $background-color;
     }
+    /* &:first-of-type{
+      table{
+        margin-left: -10000px;
+        padding-left: 10000px;
+        padding-right: 10000px;
+      }
+    } */
   }
   .price{
     display: block;
@@ -457,5 +464,43 @@ header{
     font-size: 30px;
     color: $highlight-color;
     font-weight: bold;
+  }
+}
+
+#themeSelectorContainer{
+  margin-top: 30px;
+  text-align: center;
+
+  .image_picker{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .responsive{
+      float: none;
+      width: 33%;
+      height: auto;
+
+      img{
+        width: 100% !important;
+        height: 100% !important;
+
+        &.thumbnail:hover{
+          box-shadow:0 0 2px 1px $highlight-color;
+        }
+
+        &.selected{
+          background-color: $highlight-color;
+        }
+
+      }
+    }
+    .clear{
+      display: none;
+    }
+
+  }
+  .btn{
+    margin: 30px auto;
   }
 }

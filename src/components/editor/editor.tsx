@@ -1,10 +1,28 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import ThemeEditor from './theme-editor';
+import PreView from './preview';
+import Toolbar from './toolbar';
 
 const Editor: React.FC = () => {
   return (
-    <div>
-      <h1>Editor Page</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/editor/editor" exact>
+          <section>
+            <PreView />
+            <Toolbar />
+          </section>
+        </Route>
+        <Route path={["/", "/editor/themeselector"]}>
+          <ThemeEditor />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 

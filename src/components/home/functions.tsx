@@ -1,5 +1,4 @@
 import React from 'react'
-import { Element } from 'react-scroll'
 
 const Functions: React.FC = () => {
   return (

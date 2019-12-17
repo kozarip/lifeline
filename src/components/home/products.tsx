@@ -1,5 +1,4 @@
 import React from 'react'
-import { Element } from 'react-scroll'
 
 const Products: React.FC = () => {
   return (

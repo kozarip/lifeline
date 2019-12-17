@@ -13,7 +13,7 @@ const Editor: React.FC = () => {
     <Router>
       <Switch>
         <Route path="/editor/editor" exact>
-          <section>
+          <section id="mainEditorContainer">
             <PreView />
             <Toolbar />
           </section>

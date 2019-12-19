@@ -1,6 +1,7 @@
-import React from 'react'
-import { IoIosSearch } from 'react-icons/io'
-import { IToolsState } from 'interfaces/ITools'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { IoIosSearch } from 'react-icons/io';
+import { IToolsState } from 'interfaces/ITools';
 import StationFilter from './station';
 import { CATEGORIES } from 'constants/categories';
 import { STATIONS } from 'constants/stations';
@@ -22,6 +23,21 @@ class Tools extends React.Component<{}, IToolsState>{
   render() {
     return (
       <div id="toolsContainer">
+        {
+          this.isSelectedFilterWordEmpty() ?
+            <Link
+              className="backToLink"
+              to="/editor">
+              Vissza a témákhoz
+            </Link>
+            :
+            <a
+              className="backToLink"
+              href="#"
+              onClick={this.cleanSelectedFilterWord}>
+              Vissza a kategóriákhoz
+            </a>
+        }
         { this.renderSearchBox() }
         {
           this.isSelectedFilterWordEmpty() ?
@@ -41,9 +57,9 @@ class Tools extends React.Component<{}, IToolsState>{
       <div className="searchBox">
         <input
           className="toolTextbox"
-          placeholder="Állomás keresés..."
+          placeholder="Keress képet"
           defaultValue=""
-          name="station"
+          name="searchStation"
           ref={this.searchInput}
         />
         <button onClick={this.handleSearch}><IoIosSearch /></button>
@@ -88,15 +104,14 @@ class Tools extends React.Component<{}, IToolsState>{
             'Állomások'
           }</h4>
         <div className="toolBox">
-          {
-            this.isSelectedFilterWordEmpty() ?
-              '' :
-              <a
-                className="backToCategories"
-                href="#"
-                onClick={this.cleanSelectedFilterWord}>
-                Vissza a kategóriákhoz
-              </a>
+          {this.isSelectedFilterWordEmpty() ?
+            '' :
+            <input
+              className="toolTextbox"
+              placeholder="Írj valamit az állomáshoz"
+              defaultValue=""
+              name="stationText"
+            />
           }
           {items.map((item, i) => {
             return (

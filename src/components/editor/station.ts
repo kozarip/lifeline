@@ -22,10 +22,7 @@ export default class StationFilter {
     }
     const filteredStations = this.stations.filter(station => {
       const parameterItems: string[] = station[parameter]
-      console.log(parameterItems);
-      console.log(keyword);
-      console.log(parameterItems.includes[keyword]);
-      return parameterItems.includes[keyword];
+      return parameterItems.includes(keyword);
     })
     return filteredStations;
   }

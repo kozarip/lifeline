@@ -70,7 +70,6 @@ class Tools extends React.Component<{}, IToolsState>{
   }
 
   renderStations() {
-    console.log({'type': this.state.filterType, 'word': this.state.selectedFilterWord})
     let filteredStations = []
     switch (this.state.filterType) {
     case ('category'):

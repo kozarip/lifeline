@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import ThemeEditor from './theme-editor';
+import ThemeSelector from './theme-selector';
 import PreView from './preview';
 import Toolbar from './toolbar';
 
@@ -19,7 +19,7 @@ const Editor: React.FC = () => {
           </section>
         </Route>
         <Route path={["/", "/editor/themeselector"]}>
-          <ThemeEditor />
+          <ThemeSelector />
         </Route>
       </Switch>
     </Router>

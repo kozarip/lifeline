@@ -11,7 +11,7 @@ import theme2 from 'images/themes/theme2.png';
 
 const imageList = [theme1, theme2];
 
-class ThemeEditor extends React.Component<{}, IThemeEditorStates> {
+class ThemeSelector extends React.Component<{}, IThemeEditorStates> {
   constructor(props) {
     super(props)
     this.state = {
@@ -46,4 +46,4 @@ class ThemeEditor extends React.Component<{}, IThemeEditorStates> {
   }
 }
 
-export default ThemeEditor;
+export default ThemeSelector;

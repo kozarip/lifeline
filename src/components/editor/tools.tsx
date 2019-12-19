@@ -49,24 +49,7 @@ class Tools extends React.Component<{}, IToolsState>{
   }
 
   renderCategories() {
-    return (
-      <React.Fragment>
-        <h4>Kategoriák</h4>
-        <div className="toolBox">
-          {CATEGORIES.map(category => {
-            return (
-              <div
-                onClick={() => { this.selectFilter(category.name, 'category') }}
-                key={category.name}
-                className="item">
-                <img src={`${category.image}`} />
-                <span>{category.name}</span>
-              </div>
-            )
-          })}
-        </div>
-      </React.Fragment>
-    )
+    return this.getItemsTemplate(CATEGORIES);
   }
 
   renderStations() {
@@ -79,13 +62,17 @@ class Tools extends React.Component<{}, IToolsState>{
       filteredStations = this.stationFilter.getStationsByTag(this.state.selectedFilterWord);
       break;
     }
-    return this.getStationsTemplate(filteredStations);
+    return this.getItemsTemplate(filteredStations);
   }
 
-  getStationsTemplate(stations) {
+  getItemsTemplate(items) {
     return (
       <React.Fragment>
-        <h4>Állomások</h4>
+        <h4>
+          {this.isSelectedFilterWordEmpty() ?
+            'Kategóriák' :
+            'Állomások'
+          }</h4>
         <div className="toolBox">
           {
             this.isSelectedFilterWordEmpty() ?
@@ -97,10 +84,18 @@ class Tools extends React.Component<{}, IToolsState>{
                 Vissza a kategóriákhoz
               </a>
           }
-          {stations.map((station, i) => {
+          {items.map((item, i) => {
             return (
-              <div className="item" key={i}>
-                <img src={`${station.image}`} />
+              <div
+                className="item" key={i}
+                onClick={
+                  this.isSelectedFilterWordEmpty() ?
+                    () => { this.selectFilter(item.name, 'category') } :
+                    () => {}
+                }
+              >
+                <img src={`${item.image}`} />
+                <span>{item.name}</span>
               </div>
             )
           })}

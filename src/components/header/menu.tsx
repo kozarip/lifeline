@@ -38,8 +38,8 @@ const Menu: React.FC = () => {
         <a className="profileMenuPoint" href="profile">
           Profilom
         </a>
-    </li>
-  </ul>
+      </li>
+    </ul>
   )
 }
 

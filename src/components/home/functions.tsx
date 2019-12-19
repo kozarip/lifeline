@@ -35,7 +35,7 @@ const Functions: React.FC = () => {
           <h3>Funkció 1.</h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet libero non neque vulputate tincidunt.</p>
         </div>
-        </div>
+      </div>
     </section>
   )
 }

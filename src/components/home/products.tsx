@@ -60,7 +60,7 @@ const Products: React.FC = () => {
           </table>
           <span className="price">15 000 Ft</span>
         </div>
-        </div>
+      </div>
     </section>
   )
 }

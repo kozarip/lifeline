@@ -34,12 +34,12 @@ const App: React.FC = () => {
     <I18nProvider language="hu" catalogs={catalogs}>
       <StickyContainer>
         <Router>
-        <Sticky>{({ style }) => <div style={{...style, zIndex: 9999}}><Header /></div>}</Sticky>
-            <Switch>
-              <Route path="/editor">
-                <Editor />
-              </Route>
-              <Route path="/">
+          <Sticky>{({ style }) => <div style={{...style, zIndex: 9999}}><Header /></div>}</Sticky>
+          <Switch>
+            <Route path="/editor">
+              <Editor />
+            </Route>
+            <Route path="/">
               <div id="homeContainer">
                 <Introduce />
                 <HowWork />
@@ -48,8 +48,8 @@ const App: React.FC = () => {
                 <Contact />
                 <Products />
               </div>
-              </Route>
-            </Switch>
+            </Route>
+          </Switch>
         </Router>
       </StickyContainer>
     </I18nProvider>

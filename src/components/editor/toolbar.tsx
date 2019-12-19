@@ -25,7 +25,9 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
   render() {
     return (
       <section id="toolbarContainer" className={this.getClassNames()}>
-        <button className="btnToolbarToggle"
+        <button
+          title="Szerkesztő bezárása"
+          className="btnToolbarToggle"
           onClick={this.toggleToolbar} >
           {this.state.isOpen ?
             <IoIosCloseCircleOutline /> :

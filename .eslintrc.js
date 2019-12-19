@@ -51,6 +51,7 @@ module.exports = {
     "eqeqeq": [1, "always"],
     "quotes": [1, "single"],
     "jsx-quotes": [2, "prefer-double"],
+    "indent": [2, 2],
     "no-undef": 0,
     "no-console": 1,
     "no-unused-vars": 0,

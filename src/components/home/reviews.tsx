@@ -35,7 +35,7 @@ const Reviews: React.FC = () => {
             </div>
           </div>
         </Slider>
-        </div>
+      </div>
     </section>
   )
 }

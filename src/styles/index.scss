@@ -17,6 +17,10 @@ body{
   box-sizing: inherit;
 }
 
+*:focus{
+  outline-color: $highlight-color;
+ }
+
 .wideHomeBox{
   max-width: 1080px;
   margin: 0 auto;
@@ -559,9 +563,32 @@ header{
     margin-bottom: 20px;
   }
 
+  .toolTextbox{
+    width:100%;
+    padding: 5px;
+    color: #888888;
+    font-size: 20px;
+    border: 1px solid $highlight-color;
+  }
+
   .backToCategories{
     color: #888888;
     font-size: 18px;
+  }
+
+  .searchBox{
+    margin-top: 40px;
+
+    .toolTextbox{
+      width: calc(100% - 32px);
+    }
+    button{
+      padding: 5px;
+      background-color: $highlight-color;
+      border: 1px solid $highlight-color;
+      font-size: 19px;
+      color: #fff;
+    }
   }
 
   .toolBox{

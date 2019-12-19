@@ -15,7 +15,6 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
   toggleToolbar = (): void => {
     const isOpen = !this.state.isOpen;
     this.setState({ isOpen });
-    console.log(this.state.isOpen);
   }
 
   getClassNames = (): string => {

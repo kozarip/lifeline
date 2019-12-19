@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoIosSearch } from 'react-icons/io'
 import { IToolsState } from 'interfaces/ITools'
 import StationFilter from './station';
 import { CATEGORIES } from 'constants/categories';
@@ -6,7 +7,8 @@ import { STATIONS } from 'constants/stations';
 
 class Tools extends React.Component<{}, IToolsState>{
 
-  stationFilter: any;
+  private stationFilter: any;
+  private searchInput = React.createRef<HTMLInputElement>();
 
   constructor(props) {
     super(props)
@@ -20,11 +22,7 @@ class Tools extends React.Component<{}, IToolsState>{
   render() {
     return (
       <div id="toolsContainer">
-        <input
-          onKeyPress={this.handleSearch}
-          placeholder="Állomás keresés..."
-          defaultValue=""
-          name="station" />
+        { this.renderSearchBox() }
         {
           this.isSelectedFilterWordEmpty() ?
             this.renderCategories() :
@@ -34,14 +32,30 @@ class Tools extends React.Component<{}, IToolsState>{
     )
   }
 
-  handleSearch = event => {
-    if (event.key === 'Enter') {
-      this.selectFilter(event.target.value, 'tag')
-    }
-  }
-
   isSelectedFilterWordEmpty() {
     return this.state.selectedFilterWord === '';
+  }
+
+  renderSearchBox() {
+    return (
+      <div className="searchBox">
+        <input
+          className="toolTextbox"
+          placeholder="Állomás keresés..."
+          defaultValue=""
+          name="station"
+          ref={this.searchInput}
+        />
+        <button onClick={this.handleSearch}><IoIosSearch /></button>
+      </div>
+
+    )
+  }
+
+  handleSearch = event => {
+    if (this.searchInput.current) {
+      this.selectFilter(this.searchInput.current.value, 'tag')
+    }
   }
 
   selectFilter = (selectedFilterWord, filterType) => {

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-import { IThemeEditorStates } from 'interfaces/IThemeEditor';
+import { IThemeSelectorStates } from 'interfaces/IThemeSelector';
+import AgeSelector from './age-selector';
 
 import ImagePicker from 'react-image-picker'
 import 'react-image-picker/dist/index.css'
@@ -11,7 +12,8 @@ import theme2 from 'images/themes/theme2.png';
 
 const imageList = [theme1, theme2];
 
-class ThemeSelector extends React.Component<{}, IThemeEditorStates> {
+class ThemeSelector extends React.Component<{}, IThemeSelectorStates> {
+
   constructor(props) {
     super(props)
     this.state = {

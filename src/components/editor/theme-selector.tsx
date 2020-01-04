@@ -20,12 +20,18 @@ class ThemeSelector extends React.Component<{}, IThemeSelectorStates> {
       image: {
         src: '',
         value: 0
-      }
+      },
+      isModalOpen: false,
     }
   }
 
   onPick = image => {
     this.setState({ image })
+  }
+
+  onSelect = () => {
+    console.log(this.state.image)
+    this.setState({ isModalOpen: true });
   }
 
   render() {
@@ -36,13 +42,16 @@ class ThemeSelector extends React.Component<{}, IThemeSelectorStates> {
             ({ src: image, value: i }))}
           onPick={this.onPick}
         />
-        <Link to="/editor/editor"
+        <button
           className="btn smallBtn"
-          onClick={
-            () => console.log(this.state.image)
-          }>
+          onClick={this.onSelect}>
           Választás
-        </Link>
+        </button>
+        <Modal
+          className="ageSelectorModal"
+          isOpen={this.state.isModalOpen} >
+          <AgeSelector />
+        </Modal>
       </section>
     )
   }

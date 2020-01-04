@@ -38,7 +38,8 @@ class Tools extends React.Component<{}, IToolsState>{
               Vissza a kategóriákhoz
             </a>
         }
-        { this.renderSearchBox() }
+        {this.renderSearchBox()}
+        {this.renderStationNumberBox()}
         {
           this.isSelectedFilterWordEmpty() ?
             this.renderCategories() :
@@ -56,7 +57,8 @@ class Tools extends React.Component<{}, IToolsState>{
     return (
       <div className="searchBox">
         <input
-          className="toolTextbox"
+          type="text"
+          className="formattedTextBox toolTextbox"
           placeholder="Keress képet"
           defaultValue=""
           name="searchStation"
@@ -68,7 +70,22 @@ class Tools extends React.Component<{}, IToolsState>{
     )
   }
 
-  handleSearch = event => {
+  renderStationNumberBox() {
+    return (
+      <div className="stationNumberBox">
+        <label htmlFor="stationNumber">
+          Állomás szám:
+        </label>
+        <input
+          id="stationNumber"
+          className="formattedTextBox"
+          type="number"
+          min="1" />
+      </div>
+    )
+  }
+
+  handleSearch = () => {
     if (this.searchInput.current) {
       this.selectFilter(this.searchInput.current.value, 'tag')
     }

@@ -45,6 +45,14 @@ h3{
   margin-bottom: 0;
   font-size: 30px;
   font-weight: bold;
+  &.title{
+    margin-bottom: 20px;
+    color: $highlight-color;
+  }
+}
+
+.capitalize:first-letter{
+  text-transform: capitalize;
 }
 
 p{
@@ -54,10 +62,14 @@ p{
 
 .circle{
   position: relative;
-  width: 370px;
-  height: 370px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   background-color: #fff;
+  @media screen and (min-width: $tablet-breakpoint) {
+    width: 370px;
+    height: 370px;
+  }
   img{
     position: absolute;
     top: 50%;
@@ -69,15 +81,19 @@ p{
 .btn{
   display: inline-block;
   margin-top: 20px;
-  padding: 25px 115px;
+  padding: 25px 50px;
   border-radius: 20px;
   background-color: $highlight-color;
-  font-size: 63px;
+  font-size: 43px;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   border: none;
+  @media screen and (min-width: $tablet-breakpoint) {
+    padding: 25px 115px;
+    font-size: 63px;
+  }
 }
 
 .formattedTextBox{
@@ -182,10 +198,11 @@ header{
       }
     }
     .circle{
-      margin: 0 0 0 30px;
+      margin: 0 auto 0 auto;
       background-color: $background-color;
       @media screen and (min-width: $tablet-breakpoint) {
         margin-left: 90px;
+        margin: 0 0 0 30px;
       }
     }
   }
@@ -222,10 +239,11 @@ header{
     }
 
     .circle{
-      min-width: 370px;
+      min-width: 320px;
       margin-top: 30px;
       @media screen and (min-width: $tablet-breakpoint) {
         margin-top: -15px;
+        min-width: 370px;
       }
     }
   }
@@ -389,7 +407,7 @@ header{
 
     .textBox,
     textarea{
-      width: auto;
+      width: 100%;
       margin-bottom: 30px;
       padding-left: 15px;
       padding-right: 15px;
@@ -449,9 +467,12 @@ header{
   }
 
   .greyBox{
-    width: 320px;
+    width: 280px;
     height: 400px;
     background-color: #888;
+    @media screen and (min-width: $tablet-breakpoint) {
+      width: 320px;
+    }
   }
 
   .product{
@@ -481,8 +502,11 @@ header{
 }
 
 #themeSelectorContainer{
-  margin-top: 30px;
+  margin-top: 60px;
   text-align: center;
+  @media screen and (min-width: $tablet-breakpoint) {
+    margin-top: 30px;
+  }
 
   .image_picker{
     display: flex;
@@ -508,6 +532,9 @@ header{
 
       }
     }
+    .selected .checked .icon{
+      background: none;
+    }
     .clear{
       display: none;
     }
@@ -530,6 +557,13 @@ header{
   background-color: #fff;
   padding: 20px 50px;
   text-align: center;
+
+  .closeModal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 24px;
+  }
 
   h3{
     margin-bottom: 30px;
@@ -563,8 +597,11 @@ header{
   flex-grow: 4;
   flex-shrink: 0;
   flex-basis: auto;
-  flex-direction: row;
+  flex-direction: column-reverse;
   margin-top: 30px;
+  @media screen and (min-width: $tablet-breakpoint) {
+    flex-direction: row;
+  }
 
   #previewContainer{
     flex: 3;
@@ -577,9 +614,15 @@ header{
 #toolbarContainer{
   flex-basis: 20%;
   padding: 5px 10px;
+  margin-bottom: 30px;
   overflow-y: hidden;
-  border-left: 1px solid #c9c9c9;
   transition: flex-basis 500ms ease-in-out;
+  border-bottom: 1px solid #c9c9c9;
+  @media screen and (min-width: $tablet-breakpoint) {
+    margin-bottom: 0;
+    border-bottom: none;
+    border-left: 1px solid #c9c9c9;
+  }
 
   &.close{
     flex-basis: 55px;
@@ -603,9 +646,10 @@ header{
 #toolsContainer{
 
   h4{
-    margin-top: 30px;
+    width: 100%;
     margin-bottom: 20px;
     font-size: 26px;
+    margin-top: 0;
   }
 
   .toolTextbox{
@@ -620,7 +664,9 @@ header{
     display: inline-block;
     margin-top: 5px;
     color: #888888;
-    font-size: 18px;
+    font-size: 18px;font-weight: bold;
+    background-color: #ffb6a2;
+    padding: 3px 10px;
   }
 
   .searchBox{
@@ -639,15 +685,12 @@ header{
   }
 
   .stationNumberBox{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin-top: 10px;
-    padding-right: 2px;
 
     .formattedTextBox{
       width: 50px;
       padding: 0 3px;
+      margin-left: 10px;
     }
   }
 
@@ -656,6 +699,9 @@ header{
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #c9c9c9;
 
     .toolTextbox{
       margin-bottom: 20px;
@@ -669,7 +715,6 @@ header{
 
       img{
         width: 100%;
-        height: 50px;
       }
     }
   }

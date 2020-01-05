@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 import { IThemeSelectorStates } from 'interfaces/IThemeSelector';
 import AgeSelector from './age-selector';
-
 import ImagePicker from 'react-image-picker'
 import 'react-image-picker/dist/index.css'
 
@@ -25,35 +25,48 @@ class ThemeSelector extends React.Component<{}, IThemeSelectorStates> {
     }
   }
 
-  onPick = image => {
-    this.setState({ image })
-  }
-
-  onSelect = () => {
-    console.log(this.state.image)
-    this.setState({ isModalOpen: true });
-  }
-
   render() {
     return (
       <section id="themeSelectorContainer" className="wideHomeBox">
+        <h3 className="title">Kérlek válassz témát!</h3>
         <ImagePicker
           images={imageList.map((image, i) =>
             ({ src: image, value: i }))}
-          onPick={this.onPick}
+          onPick={this.handleThemePick}
         />
-        <button
-          className="btn smallBtn"
-          onClick={this.onSelect}>
-          Választás
-        </button>
+        {this.state.image.src !== '' ?
+          <button
+            className="btn smallBtn"
+            onClick={this.handleSelectPickedTheme}>
+            Választás
+          </button>
+          :
+          ''
+        }
         <Modal
           className="ageSelectorModal"
-          isOpen={this.state.isModalOpen} >
+          isOpen={this.state.isModalOpen}
+          onRequestClose={this.handleCloseModal}>
+          <IoIosCloseCircleOutline
+            className="closeModal"
+            onClick={this.handleCloseModal} />
           <AgeSelector />
         </Modal>
       </section>
     )
+  }
+
+  handleThemePick = image => {
+    this.setState({ image })
+  }
+
+  handleSelectPickedTheme = () => {
+    console.log(this.state.image)
+    this.setState({ isModalOpen: true });
+  }
+
+  handleCloseModal = () => {
+    this.setState({ isModalOpen: false });
   }
 }
 

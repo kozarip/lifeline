@@ -23,6 +23,15 @@ class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
           type="number"
           onBlur={this.setRecommendedStationNumber}
           placeholder="Életkorod" />
+        {this.state.recommendedStationNumber === 0 ?
+          <a
+            className="btn smallBtn"
+            onClick={this.setRecommendedStationNumber} >
+            Tovább
+          </a>
+          :
+          ''
+        }
         {this.state.recommendedStationNumber > 0 ?
           <div>
             <p>Neked

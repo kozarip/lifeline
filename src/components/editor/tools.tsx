@@ -59,7 +59,7 @@ class Tools extends React.Component<{}, IToolsState>{
         <input
           type="text"
           className="formattedTextBox toolTextbox"
-          placeholder="Keress képet"
+          placeholder="Kép keresés"
           defaultValue=""
           name="searchStation"
           ref={this.searchInput}
@@ -88,6 +88,7 @@ class Tools extends React.Component<{}, IToolsState>{
   handleSearch = () => {
     if (this.searchInput.current) {
       this.selectFilter(this.searchInput.current.value, 'tag')
+      this.searchInput.current.value = '';
     }
   }
 
@@ -115,12 +116,14 @@ class Tools extends React.Component<{}, IToolsState>{
   getItemsTemplate(items) {
     return (
       <React.Fragment>
-        <h4>
-          {this.isSelectedFilterWordEmpty() ?
-            'Kategóriák' :
-            'Állomások'
-          }</h4>
         <div className="toolBox">
+          <h4 className="capitalize">
+            {this.isSelectedFilterWordEmpty() ?
+              'Kategóriák'
+              :
+              this.state.selectedFilterWord + ' szóhoz tartozó állomások'
+            }
+          </h4>
           {this.isSelectedFilterWordEmpty() ?
             '' :
             <input

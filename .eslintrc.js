@@ -146,6 +146,8 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/explicit-member-accessibility": 0,
     "@typescript-eslint/no-angle-bracket-type-assertion": 0,
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
     // TODO: enable the lines below when refactoring
     // "react-hooks/rules-of-hooks": 1,
     // "react-hooks/exhaustive-deps": 1

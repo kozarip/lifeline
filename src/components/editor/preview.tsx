@@ -1,18 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
-class Preview extends React.Component{
-  constructor(props: any) {
-    super(props);
+const Preview: React.FC = () => {
+  const savedThemeImageSrc = useSelector(
+    (state: any) => state.themeImageSrc
+  );
 
-  }
+  const themeImageSrc = savedThemeImageSrc ?
+    savedThemeImageSrc
+    :
+    ''
 
-  render () {
-    return (
-      <section id="previewContainer">
-        <img src={require('../../images/themes/theme1.jpg')} />
-      </section>
-    )
-  }
+  return (
+    <section id="previewContainer">
+      <img src={themeImageSrc} />
+    </section>
+  )
 };
 
 export default Preview;

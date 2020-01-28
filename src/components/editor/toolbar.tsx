@@ -23,7 +23,7 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
 
   render() {
     return (
-      <section id="toolbarContainer" className={this.getClassNames()}>
+      <aside id="toolbarContainer" className={this.getClassNames()}>
         <button
           title="Szerkesztő bezárása"
           className="btnToolbarToggle"
@@ -37,7 +37,7 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
             <Tools /> :
             ''
         }
-      </section>
+      </aside>
     )
   }
 };

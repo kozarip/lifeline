@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 
+import { useSelector, useDispatch } from 'react-redux';
 import { IThemeSelectorStates } from 'interfaces/IThemeSelector';
 import AgeSelector from './age-selector';
 import ImagePicker from 'react-image-picker'
@@ -9,13 +10,20 @@ import 'react-image-picker/dist/index.css'
 
 import theme1 from 'images/themes/theme1.jpg';
 import theme2 from 'images/themes/theme2.png';
+import { changeTheme } from './store/actions';
 
-const imageList = [theme1, theme2];
+interface IThemeSelectorProps{
+  saveSelectedTheme: any;
+}
 
-class ThemeSelector extends React.Component<{}, IThemeSelectorStates> {
+class ThemeSelector2 extends React.Component<IThemeSelectorProps, IThemeSelectorStates> {
+
+  private imageList: string[] = [theme1, theme2];
+  private saveSelectedTheme: Function;
 
   constructor(props) {
     super(props)
+    this.saveSelectedTheme = props.saveSelectedTheme;
     this.state = {
       image: {
         src: '',
@@ -30,7 +38,7 @@ class ThemeSelector extends React.Component<{}, IThemeSelectorStates> {
       <section id="themeSelectorContainer" className="wideHomeBox">
         <h3 className="title">Kérlek válassz témát!</h3>
         <ImagePicker
-          images={imageList.map((image, i) =>
+          images={this.imageList.map((image, i) =>
             ({ src: image, value: i }))}
           onPick={this.handleThemePick}
         />
@@ -61,13 +69,26 @@ class ThemeSelector extends React.Component<{}, IThemeSelectorStates> {
   }
 
   handleSelectPickedTheme = () => {
-    console.log(this.state.image)
+    this.saveSelectedTheme(this.state.image.src);
     this.setState({ isModalOpen: true });
   }
 
   handleCloseModal = () => {
     this.setState({ isModalOpen: false });
   }
+}
+
+//TODO: move to an own;
+const ThemeSelector: React.FC = () => {
+  const dispatch = useDispatch()
+  return (
+    <ThemeSelector2
+      saveSelectedTheme={ themeImageSrc => {
+        console.log(themeImageSrc);
+        dispatch(changeTheme(themeImageSrc))
+      }}
+    />
+  )
 }
 
 export default ThemeSelector;

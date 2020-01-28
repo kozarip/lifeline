@@ -5,6 +5,9 @@ import { IToolsState } from 'interfaces/ITools';
 import StationFilter from './station';
 import { CATEGORIES } from 'constants/categories';
 import { STATIONS } from 'constants/stations';
+import { TagsDictonary } from 'enums/station';
+import StationNumberBox from './stationNumberBox'
+
 
 class Tools extends React.Component<{}, IToolsState>{
 
@@ -39,7 +42,7 @@ class Tools extends React.Component<{}, IToolsState>{
             </a>
         }
         {this.renderSearchBox()}
-        {this.renderStationNumberBox()}
+        <StationNumberBox />
         {
           this.isSelectedFilterWordEmpty() ?
             this.renderCategories() :
@@ -64,24 +67,10 @@ class Tools extends React.Component<{}, IToolsState>{
           name="searchStation"
           ref={this.searchInput}
         />
+
         <button onClick={this.handleSearch}><IoIosSearch /></button>
       </div>
 
-    )
-  }
-
-  renderStationNumberBox() {
-    return (
-      <div className="stationNumberBox">
-        <label htmlFor="stationNumber">
-          Állomás szám:
-        </label>
-        <input
-          id="stationNumber"
-          className="formattedTextBox"
-          type="number"
-          min="1" />
-      </div>
     )
   }
 
@@ -161,4 +150,5 @@ class Tools extends React.Component<{}, IToolsState>{
   }
 
 }
+
 export default Tools;

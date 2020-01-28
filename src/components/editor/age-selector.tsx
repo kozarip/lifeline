@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { IAgeSelectorStates } from 'interfaces/IAgeSelector';
+import StationNumberBox from './stationNumberBox';
 
 class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
 
@@ -34,13 +35,11 @@ class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
         }
         {this.state.recommendedStationNumber > 0 ?
           <div>
-            <p>Neked
-              <input
-                className="stationNumberTextBox"
-                type="number"
-                min="1"
-                value={this.state.recommendedStationNumber} />
-              állomást ajánlunk!</p>
+            <div>Ajánlott
+              <StationNumberBox
+                recommendedStationNumber = {this.state.recommendedStationNumber}
+              />
+            </div>
             <Link
               to="/editor/editor"
               className="btn smallBtn" >
@@ -58,9 +57,11 @@ class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
     let age = 0
     if (this.ageInput.current) {
       age = parseInt(this.ageInput.current.value);
-      this.setState({
-        recommendedStationNumber: Math.floor(age / 2)
-      })
+      if (age > 0) {
+        this.setState({
+          recommendedStationNumber: Math.floor(age / 2)
+        })
+      }
 
     }
   }

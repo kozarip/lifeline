@@ -1,5 +1,5 @@
-import { IStation } from "interfaces/IStation";
-import { Categories } from "enums/station";
+import { IStation } from 'interfaces/IStation';
+import { CategoriesDictonary, TagsDictonary } from 'enums/station';
 
 import babeImage from 'images/stations/babe.png';
 import crossImage from 'images/stations/cross.png';
@@ -8,23 +8,23 @@ import schoolImage from 'images/stations/student.png';
 
 export const STATIONS: IStation[] = [
   {
-    categories: [Categories.born],
+    categories: [CategoriesDictonary.born],
     image: babeImage,
-    tags: ['baba', 'cuki', 'születés'],
+    tags: [TagsDictonary.babe, TagsDictonary.cute, TagsDictonary.born],
   },
   {
-    categories: [Categories.born, Categories.marriage],
+    categories: [CategoriesDictonary.born, CategoriesDictonary.marriage],
     image: crossImage,
-    tags: ['kereszt', 'kereszténység', 'születés'],
+    tags: [TagsDictonary.cross, TagsDictonary.christianity, TagsDictonary.born],
   },
   {
-    categories: [Categories.marriage],
+    categories: [CategoriesDictonary.marriage],
     image: churchImgae,
-    tags: ['templom', 'kereszténység'],
+    tags: [TagsDictonary.church, TagsDictonary.christianity],
   },
   {
-    categories: [Categories.school],
+    categories: [CategoriesDictonary.school],
     image: schoolImage,
-    tags: ['diák', 'cuki'],
+    tags: [TagsDictonary.student, TagsDictonary.cute],
   },
 ]

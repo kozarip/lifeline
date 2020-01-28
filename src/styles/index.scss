@@ -130,6 +130,9 @@ header{
     flex: 1 0;
     max-width: 270px;
     z-index: 99;
+    img{
+      width: 100%;
+    }
   }
 }
 .menu{
@@ -643,6 +646,22 @@ header{
   }
 }
 
+.stationNumberBox{
+  margin-top: 10px;
+
+  .ageSelectorModal &{
+    display: inline-block;
+    margin-left: 5px;
+    text-transform: lowercase;
+  }
+
+  .formattedTextBox{
+    width: 50px;
+    padding: 0 3px;
+    margin-left: 10px;
+  }
+}
+
 #toolsContainer{
 
   h4{
@@ -662,9 +681,9 @@ header{
 
   .backToLink{
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 7px;
     color: #888888;
-    font-size: 18px;font-weight: bold;
+    font-size: 12px;font-weight: bold;
     background-color: #ffb6a2;
     padding: 3px 10px;
   }
@@ -681,16 +700,6 @@ header{
       border: 1px solid $highlight-color;
       font-size: 18px;
       color: #fff;
-    }
-  }
-
-  .stationNumberBox{
-    margin-top: 10px;
-
-    .formattedTextBox{
-      width: 50px;
-      padding: 0 3px;
-      margin-left: 10px;
     }
   }
 

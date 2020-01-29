@@ -1,19 +1,16 @@
 import React,  {useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeStationNumber } from './store/actions'
+import { IStationNumberProps } from 'interfaces/IStationNumber';
 //import {reducer, initialState} from './store/reducers' ;
 
-//TODO:  move to a own file
-interface IStationNumberProps {
-  recommendedStationNumber?: any;
-}
 
 const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNumber }) => {
-  const stationNumberStated = useSelector(
+  const savedStationNumber = useSelector(
     (state: any) => state.stationNumber
   );
-  const stationNumber = stationNumberStated ?
-    stationNumberStated
+  const stationNumber = savedStationNumber ?
+    savedStationNumber
     :
     recommendedStationNumber
   ;

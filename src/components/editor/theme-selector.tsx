@@ -2,8 +2,11 @@ import React from 'react';
 import Modal from 'react-modal';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { IThemeSelectorStates } from 'interfaces/IThemeSelector';
+import { useDispatch } from 'react-redux';
+import {
+  IThemeSelectorProps,
+  IThemeSelectorStates
+} from 'interfaces/IThemeSelector';
 import AgeSelector from './age-selector';
 import ImagePicker from 'react-image-picker'
 import 'react-image-picker/dist/index.css'
@@ -12,11 +15,20 @@ import theme1 from 'images/themes/theme1.jpg';
 import theme2 from 'images/themes/theme2.png';
 import { changeTheme } from './store/actions';
 
-interface IThemeSelectorProps{
-  saveSelectedTheme: any;
+//TODO: move to an own;
+const ThemeSelector: React.FC = () => {
+  const dispatch = useDispatch()
+  return (
+    <ThemeSelectorBox
+      saveSelectedTheme={ themeImageSrc => {
+        console.log(themeImageSrc);
+        dispatch(changeTheme(themeImageSrc))
+      }}
+    />
+  )
 }
 
-class ThemeSelector2 extends React.Component<IThemeSelectorProps, IThemeSelectorStates> {
+class ThemeSelectorBox extends React.Component<IThemeSelectorProps, IThemeSelectorStates> {
 
   private imageList: string[] = [theme1, theme2];
   private saveSelectedTheme: Function;
@@ -76,19 +88,6 @@ class ThemeSelector2 extends React.Component<IThemeSelectorProps, IThemeSelector
   handleCloseModal = () => {
     this.setState({ isModalOpen: false });
   }
-}
-
-//TODO: move to an own;
-const ThemeSelector: React.FC = () => {
-  const dispatch = useDispatch()
-  return (
-    <ThemeSelector2
-      saveSelectedTheme={ themeImageSrc => {
-        console.log(themeImageSrc);
-        dispatch(changeTheme(themeImageSrc))
-      }}
-    />
-  )
 }
 
 export default ThemeSelector;

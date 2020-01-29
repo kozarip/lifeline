@@ -38,7 +38,8 @@ class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
             <div>Ajánlott
               <StationNumberBox
                 recommendedStationNumber = {this.state.recommendedStationNumber}
-              />
+              /><br />
+              <small>Késöbb tudod módosítani</small>
             </div>
             <Link
               to="/editor/editor"

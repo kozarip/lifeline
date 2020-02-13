@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosSearch } from 'react-icons/io';
 import { IToolsState } from 'interfaces/ITools';
-import StationFilter from './controllers/station';
+import StationFilter from './controllers/station-filter';
 import { CATEGORIES } from 'constants/categories';
 import { STATIONS } from 'constants/stations';
 import StationNumberBox from './stationNumberBox'

@@ -1,4 +1,4 @@
-import { ICategories } from 'interfaces/IStation';
+import { ICategories } from 'interfaces/IStationFilter';
 import { CategoriesDictonary } from 'enums/station';
 
 import bornImage from 'images/categories/born.png';

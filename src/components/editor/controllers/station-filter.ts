@@ -1,4 +1,4 @@
-import { IStation } from 'interfaces/IStation'
+import { IStation } from 'interfaces/IStationFilter'
 
 export default class StationFilter {
 

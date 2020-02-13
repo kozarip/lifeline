@@ -1,4 +1,4 @@
-import { IStation } from 'interfaces/IStation';
+import { IStation } from 'interfaces/IStationFilter';
 import { CategoriesDictonary, TagsDictonary } from 'enums/station';
 
 import babeImage from 'images/stations/babe.png';

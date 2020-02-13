@@ -4,7 +4,10 @@ import jsPDF from 'jspdf';
 import { useSelector } from 'react-redux';
 
 const Preview: React.FC = () => {
-  const { themeImageSrc, stationNumber }  = useSelector(
+  const {
+    themeImageSrc,
+    customerStations
+  } = useSelector(
     (state: any) => state
   );
 
@@ -16,7 +19,16 @@ const Preview: React.FC = () => {
   return (
     <React.Fragment>
       <section style={{position: 'relative'}} id="previewContainer">
-        <p style={{position: 'absolute', color: 'red'}}>KÉP FELIRAT</p>
+        {
+          customerStations.map((customerStation, i) => {
+            return (
+              <div key={i}>
+                <img src={customerStation.image} />
+                <span>{customerStation.text}</span>
+              </div>
+            )
+          })
+        }
         <img src={currentThemeImageSrc} />
       </section>
       <button onClick={printDocument}>Nyomtatás</button>

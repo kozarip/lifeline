@@ -15,6 +15,7 @@ const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNum
     recommendedStationNumber
   ;
   const dispatch = useDispatch();
+  dispatch(changeStationNumber(stationNumber))
   /**
    * TODO: use React contexAPI
    * const [state, dispatch] = useReducer(reducer, initialState);
@@ -35,7 +36,7 @@ const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNum
             dispatch(changeStationNumber(event.target.value))
           }
         }
-        value={stationNumber}
+        value={stationNumber? stationNumber : 0}
         min="1" />
     </div>
   )

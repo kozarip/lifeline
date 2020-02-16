@@ -1,9 +1,6 @@
 
-import { IStation } from "interfaces/IStationFilter";
 import { ICustomerStation } from "interfaces/ICustomerStation";
 import { THEMES } from 'constants/themes'
-import Point from "../controllers/point";
-import { useSelector } from "react-redux";
 
 export function generateStations(themeId, stationNumber) {
   const stations: ICustomerStation[] = []
@@ -19,7 +16,6 @@ export function generateStations(themeId, stationNumber) {
     customerStations: stations
   }
 }
-
 
 function calculeteCustomerStationPositions(themeId, stationNumber){
   const currentTheme = THEMES[themeId];

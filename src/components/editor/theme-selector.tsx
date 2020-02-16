@@ -11,8 +11,7 @@ import AgeSelector from './age-selector';
 import ImagePicker from 'react-image-picker'
 import 'react-image-picker/dist/index.css'
 
-import theme1 from 'images/themes/theme1.jpg';
-import theme2 from 'images/themes/theme2.png';
+import { THEMES } from 'constants/themes';
 import { changeTheme } from './store/actions';
 
 //TODO: move to an own;
@@ -20,9 +19,9 @@ const ThemeSelector: React.FC = () => {
   const dispatch = useDispatch()
   return (
     <ThemeSelectorBox
-      saveSelectedTheme={ themeImageSrc => {
-        console.log(themeImageSrc);
-        dispatch(changeTheme(themeImageSrc))
+      saveSelectedTheme={ themeId => {
+        //console.log(themeId);
+        dispatch(changeTheme(themeId))
       }}
     />
   )
@@ -30,17 +29,15 @@ const ThemeSelector: React.FC = () => {
 
 class ThemeSelectorBox extends React.Component<IThemeSelectorProps, IThemeSelectorStates> {
 
-  private imageList: string[] = [theme1, theme2];
-  private saveSelectedTheme: Function;
+  private imageList: string[]
+  private saveSelectedTheme: Function
 
   constructor(props) {
     super(props)
     this.saveSelectedTheme = props.saveSelectedTheme;
+    this.imageList = THEMES.map(theme => theme.image)
     this.state = {
-      image: {
-        src: '',
-        value: 0
-      },
+      themeId: -1,
       isModalOpen: false,
     }
   }
@@ -54,7 +51,7 @@ class ThemeSelectorBox extends React.Component<IThemeSelectorProps, IThemeSelect
             ({ src: image, value: i }))}
           onPick={this.handleThemePick}
         />
-        {this.state.image.src !== '' ?
+        {this.state.themeId >-1 ?
           <button
             className="btn smallBtn"
             onClick={this.handleSelectPickedTheme}>
@@ -77,11 +74,11 @@ class ThemeSelectorBox extends React.Component<IThemeSelectorProps, IThemeSelect
   }
 
   handleThemePick = image => {
-    this.setState({ image })
+    this.setState({ themeId: image.value })
   }
 
   handleSelectPickedTheme = () => {
-    this.saveSelectedTheme(this.state.image.src);
+    this.saveSelectedTheme(this.state.themeId);
     this.setState({ isModalOpen: true });
   }
 

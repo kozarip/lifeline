@@ -1,9 +1,8 @@
-import { IStation } from "interfaces/IStationFilter";
-import { ICustomerStation } from "interfaces/ICustomerStation";
+import { generateStations } from "../controllers/customer-station-helper";
 
 export const initialState = {
-  stationNumber: 4,
-  themeImageSrc: '',
+  stationNumber: 0,
+  themeId: 0,
   customerStations: [],
 }
 
@@ -13,27 +12,14 @@ export function reducer(state = initialState, action) {
     return {
       ...state,
       ...action.stationNumber,
-      ...generateStations(action.stationNumber.stationNumber),
+      ...generateStations(initialState.themeId, action.stationNumber.stationNumber),
     };
   case ('Change_Theme_Image_Src'):
     return {
       ...state,
-      ...action.themeImageSrc
+      ...action.themeId
     }
   default:
     return state
-  }
-}
-
-function generateStations(stationNumber) {
-  const stations: ICustomerStation[] = []
-  for (let i = 0; i < stationNumber; i++){
-    stations.push({
-      image: require('images/marker.png'),
-      text: 'Ide irhatsz'
-    })
-  }
-  return {
-    customerStations: stations
   }
 }

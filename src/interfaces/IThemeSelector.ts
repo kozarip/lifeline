@@ -1,5 +1,5 @@
 export interface IThemeSelectorStates {
-  image: IThemeSelectorImage;
+  themeId: number;
   isModalOpen: boolean;
 }
 

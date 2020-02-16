@@ -90,6 +90,7 @@ p{
   text-transform: uppercase;
   text-decoration: none;
   border: none;
+  cursor: pointer;
   @media screen and (min-width: $tablet-breakpoint) {
     padding: 25px 115px;
     font-size: 63px;

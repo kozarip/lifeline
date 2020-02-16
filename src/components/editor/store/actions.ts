@@ -6,10 +6,10 @@
  * station : [{image,text}...]
  */
 
-export function changeTheme(themeImageSrc) {
+export function changeTheme(themeId) {
   return {
     type: 'Change_Theme_Image_Src',
-    themeImageSrc: { themeImageSrc }
+    themeId: { themeId }
   }
 }
 

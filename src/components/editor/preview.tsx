@@ -2,19 +2,21 @@ import React from 'react'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useSelector } from 'react-redux';
+import { THEMES } from 'constants/themes'
+import Point from './controllers/point';
 
 const Preview: React.FC = () => {
   const {
-    themeImageSrc,
+    themeId,
+    stationNumber,
     customerStations
   } = useSelector(
     (state: any) => state
   );
-
-  const currentThemeImageSrc = themeImageSrc ?
-    themeImageSrc
+  const currentThemeId = themeId ?
+    themeId
     :
-    require('images/themes/theme1.jpg');
+    0;
 
   return (
     <React.Fragment>
@@ -22,14 +24,14 @@ const Preview: React.FC = () => {
         {
           customerStations.map((customerStation, i) => {
             return (
-              <div className="stationPin" key={i}>
+              <div style={{top: customerStation.position.y, left: customerStation.position.x }} className="stationPin" key={i}>
                 <img src={customerStation.image} />
                 <span className="stationPinText">{customerStation.text}</span>
               </div>
             )
           })
         }
-        <img src={currentThemeImageSrc} />
+        <img src={THEMES[currentThemeId].image} />
       </section>
       <button onClick={printDocument}>Nyomtatás</button>
     </React.Fragment>
@@ -48,7 +50,6 @@ function printDocument() {
         pdf.save('download.pdf');
       });
   }
-
 }
 
 export default Preview;

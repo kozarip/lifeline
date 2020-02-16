@@ -22,9 +22,9 @@ const Preview: React.FC = () => {
         {
           customerStations.map((customerStation, i) => {
             return (
-              <div key={i}>
+              <div className="stationPin" key={i}>
                 <img src={customerStation.image} />
-                <span>{customerStation.text}</span>
+                <span className="stationPinText">{customerStation.text}</span>
               </div>
             )
           })

@@ -2,7 +2,7 @@ import { IStation } from "interfaces/IStationFilter";
 import { ICustomerStation } from "interfaces/ICustomerStation";
 
 export const initialState = {
-  stationNumber: 0,
+  stationNumber: 4,
   themeImageSrc: '',
   customerStations: [],
 }

@@ -624,6 +624,10 @@ header{
   color: #fff;
   text-align: center;
 
+  &.selected{
+    background-color: red;
+  }
+
   img{
     max-width: 50px;
     max-height: 50px;

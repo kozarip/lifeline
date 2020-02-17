@@ -1,22 +1,32 @@
 import React from 'react'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { THEMES } from 'constants/themes'
 import Point from './controllers/point';
+import { changeSelectedThemeId } from 'components/editor/store/actions';
 
 const Preview: React.FC = () => {
   const {
     themeId,
     stationNumber,
-    customerStations
+    customerStations,
+    selectedStationImage,
   } = useSelector(
     (state: any) => state
   );
+  const dispatch = useDispatch()
   const currentThemeId = themeId ?
     themeId
     :
     0;
+
+  const handleCustomerStationClick = event => {
+    const selected = event.target;
+    selected.classList.add('selected')
+    console.log(selected.dataset.id)
+    dispatch(changeSelectedThemeId(selected.dataset.id))
+  }
 
   return (
     <React.Fragment>
@@ -24,7 +34,13 @@ const Preview: React.FC = () => {
         {
           customerStations.map((customerStation, i) => {
             return (
-              <div style={{top: customerStation.position.y, left: customerStation.position.x }} className="stationPin" key={i}>
+              <div
+                style={{ top: customerStation.position.y, left: customerStation.position.x }}
+                className="stationPin"
+                key={i}
+                data-id={i}
+                onClick={handleCustomerStationClick}
+              >
                 <img src={customerStation.image} />
                 <span className="stationPinText">{customerStation.text}</span>
               </div>
@@ -37,6 +53,7 @@ const Preview: React.FC = () => {
     </React.Fragment>
   )
 };
+
 
 function printDocument() {
   const input = document.getElementById('previewContainer');

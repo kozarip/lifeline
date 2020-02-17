@@ -5,8 +5,10 @@ import { IToolsState } from 'interfaces/ITools';
 import StationFilter from './controllers/station-filter';
 import { CATEGORIES } from 'constants/categories';
 import { STATIONS } from 'constants/stations';
-import StationNumberBox from './stationNumberBox'
-
+import StationNumberBox from './stationNumberBox';
+import { IStationComponentProps } from 'interfaces/IStationComponent';
+import { useDispatch } from 'react-redux';
+import { changeSelectedStationImage } from './store/actions';
 
 class Tools extends React.Component<{}, IToolsState>{
 
@@ -33,12 +35,11 @@ class Tools extends React.Component<{}, IToolsState>{
               Vissza a témákhoz
             </Link>
             :
-            <a
+            <span
               className="backToLink"
-              href="#"
               onClick={this.cleanSelectedFilterWord}>
               Vissza a kategóriákhoz
-            </a>
+            </span>
         }
         {this.renderSearchBox()}
         <StationNumberBox />
@@ -123,17 +124,13 @@ class Tools extends React.Component<{}, IToolsState>{
           }
           {items.map((item, i) => {
             return (
-              <div
-                className="item" key={i}
-                onClick={
-                  this.isSelectedFilterWordEmpty() ?
-                    () => { this.selectFilter(item.name, 'category') } :
-                    () => {}
-                }
-              >
-                <img src={`${item.image}`} />
-                <span>{item.name}</span>
-              </div>
+              <Station
+                isSelectedFilterWordEmpty = {this.isSelectedFilterWordEmpty.bind(this)}
+                selectFilter={this.selectFilter.bind(this)}
+                item={item}
+                i={i}
+                key={i}
+              />
             )
           })}
         </div>
@@ -148,6 +145,24 @@ class Tools extends React.Component<{}, IToolsState>{
     this.setState({ filterType, selectedFilterWord });
   }
 
+}
+
+const Station: React.FC<IStationComponentProps> = props => {
+
+  const dispatch = useDispatch();
+  return (
+    <div
+      className="item" key={props.i}
+      onClick={
+        props.isSelectedFilterWordEmpty() ?
+          () => { props.selectFilter(props.item.name, 'category') } :
+          () => { dispatch(changeSelectedStationImage(props.item.image)) }
+      }
+    >
+      <img src={`${props.item.image}`} />
+      <span>{props.item.name}</span>
+    </div>
+  )
 }
 
 export default Tools;

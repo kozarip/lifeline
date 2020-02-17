@@ -12,7 +12,7 @@ export default class StationFilter {
     return this.getStationsByParameterName(keyword, 'categories');
   }
 
-  getStationsByTag(keyword: string){
+  getStationsByTag(keyword: string) {
     return this.getStationsByParameterName(keyword, 'tags');
   }
 

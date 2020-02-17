@@ -28,3 +28,16 @@ function calculeteCustomerStationPositions(themeId, stationNumber){
   }
   return calculatedPositions;
 }
+
+export function setImageForSelectedStation(
+  customerStations,
+  selectedStationId,
+  selectedImage) {
+
+  console.log(selectedImage.image)
+
+  customerStations[selectedStationId].image = selectedImage.image;
+  return {
+    customerStations: customerStations
+  }
+}

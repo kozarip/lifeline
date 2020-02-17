@@ -19,3 +19,17 @@ export function changeStationNumber(stationNumber) {
     stationNumber: { stationNumber },
   }
 }
+
+export function changeSelectedThemeId(selectedStationId) {
+  return {
+    type: 'Change_Selected_Station_Id',
+    selectedStationId: {selectedStationId},
+  }
+}
+
+export function changeSelectedStationImage(image) {
+  return {
+    type: 'Change_Selected_Station_Image',
+    image: { image },
+  }
+}

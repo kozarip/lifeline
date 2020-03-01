@@ -673,6 +673,11 @@ header{
     margin: 0;
   }
 
+  .orderBtn{
+    position: absolute;
+    bottom: 0;
+  }
+
   .btnToolbarToggle{
     float: right;
     color: $highlight-color;

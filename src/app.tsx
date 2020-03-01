@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <Router>
           <Sticky>{({ style }) => <div style={{...style, zIndex: 9999}}><Header /></div>}</Sticky>
           <Switch>
-            <Route path="/editor">
+            <Route exact path="/editor">
               <Editor />
             </Route>
             <Route path="/">

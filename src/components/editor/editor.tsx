@@ -10,6 +10,7 @@ import store from './store/store';
 import ThemeSelector from './theme-selector';
 import PreView from './preview';
 import Toolbar from './toolbar';
+import Order from 'components/order/order';
 
 const Editor: React.FC = () => {
   return (
@@ -21,6 +22,9 @@ const Editor: React.FC = () => {
               <PreView />
               <Toolbar />
             </section>
+          </Route>
+          <Route path="/order">
+            <Order />
           </Route>
           <Route path={["/", "/editor/themeselector"]}>
             <ThemeSelector />

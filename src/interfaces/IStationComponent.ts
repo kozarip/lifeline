@@ -1,9 +1,10 @@
-export interface IStationComponentProps{
+export interface IStationsEditorProps{
   isSelectedFilterWordEmpty: Function;
   selectFilter: Function;
-  item: {
-    name: string,
-    image: string
-  };
-  i: number;
+  items: Item[];
+}
+
+interface Item{
+  name: string,
+  image: string
 }

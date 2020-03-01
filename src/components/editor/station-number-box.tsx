@@ -30,14 +30,22 @@ const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNum
       <input
         id="stationNumber"
         className="formattedTextBox"
-        type="number"
-        onChange={
-          event => {
-            dispatch(changeStationNumber(event.target.value))
+        type="text"
+        defaultValue={stationNumber ? stationNumber : 0}
+      />
+      <button
+        className="btn tinyBtn"
+        onClick={
+          () => {
+            const stationNumberInput = document.getElementById('stationNumber')
+            const selectedStationNumber =
+              stationNumberInput ?
+                (stationNumberInput as HTMLInputElement).value :
+                0
+            dispatch(changeStationNumber(selectedStationNumber))
           }
         }
-        value={stationNumber? stationNumber : 0}
-        min="1" />
+      >Mentés</button>
     </div>
   )
 }

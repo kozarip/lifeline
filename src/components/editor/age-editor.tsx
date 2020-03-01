@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { IAgeSelectorStates } from 'interfaces/IAgeSelector';
-import StationNumberBox from './stationNumberBox';
+import  { AgeEditorProps, AgeEditorStates } from 'interfaces/IAgeEditor';
+import StationNumberBox from './station-number-box';
 
-class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
+class AgeEditor extends React.Component<AgeEditorProps,  AgeEditorStates>{
 
   private ageInput = React.createRef<HTMLInputElement>();
 
@@ -17,19 +17,20 @@ class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
   render() {
     return (
       <React.Fragment>
-        <h3>Írd be az életkorodat</h3>
-        <input
-          ref={this.ageInput}
-          className="formattedTextBox textBox"
-          type="number"
-          onBlur={this.setRecommendedStationNumber}
-          placeholder="Életkorod" />
-        {this.state.recommendedStationNumber === 0 ?
-          <a
-            className="btn smallBtn"
-            onClick={this.setRecommendedStationNumber} >
-            Tovább
-          </a>
+        {this.props.appStationNumber === 0 ?
+          <React.Fragment>
+            <h3>Írd be az életkorodat</h3>
+            <input
+              ref={this.ageInput}
+              className="formattedTextBox textBox"
+              type="number"
+              placeholder="Életkorod" />
+            <a
+              className="btn smallBtn"
+              onClick={this.setRecommendedStationNumber} >
+              Tovább
+            </a>
+          </React.Fragment>
           :
           ''
         }
@@ -69,4 +70,4 @@ class AgeSelector extends React.Component<{}, IAgeSelectorStates>{
 
 }
 
-export default AgeSelector;
+export default AgeEditor;

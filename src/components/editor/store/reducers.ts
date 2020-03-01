@@ -1,7 +1,10 @@
-import { generateStations, setImageForSelectedStation } from "../controllers/customer-station-helper";
+import {
+  generateStations,
+  setAttributeForSelectedStation
+} from "../controllers/customer-station-helper";
 
 export const initialState = {
-  stationNumber: 2,
+  stationNumber: 0,
   themeId: 0,
   customerStations: [],
   selectedStationId: 0,
@@ -14,7 +17,10 @@ export function reducer(state = initialState, action) {
     return {
       ...state,
       ...action.stationNumber,
-      ...generateStations(state.themeId, action.stationNumber.stationNumber),
+      ...generateStations(
+        state.themeId,
+        state.customerStations,
+        action.stationNumber.stationNumber),
     };
   case ('Change_Theme_Image_Src'):
     return {
@@ -26,13 +32,13 @@ export function reducer(state = initialState, action) {
       ...state,
       ...action.selectedStationId,
     }
-  case ('Change_Selected_Station_Image'):
+  case ('Change_Selected_Station_Attribute'):
     return {
       ...state,
-      ...setImageForSelectedStation(
+      ...setAttributeForSelectedStation(
         state.customerStations,
         state.selectedStationId,
-        action.image)
+        action.image ? action.image : action.text)
     }
   default:
     return state

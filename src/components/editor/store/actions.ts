@@ -29,7 +29,14 @@ export function changeSelectedThemeId(selectedStationId) {
 
 export function changeSelectedStationImage(image) {
   return {
-    type: 'Change_Selected_Station_Image',
+    type: 'Change_Selected_Station_Attribute',
     image: { image },
+  }
+}
+
+export function changeSelectedStationText(text) {
+  return {
+    type: 'Change_Selected_Station_Attribute',
+    text: { text },
   }
 }

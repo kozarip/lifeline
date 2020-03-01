@@ -2,22 +2,37 @@
 import { ICustomerStation } from "interfaces/ICustomerStation";
 import { THEMES } from 'constants/themes'
 
-export function generateStations(themeId, stationNumber) {
-  const stations: ICustomerStation[] = []
-  const position = calculeteCustomerStationPositions(themeId, stationNumber)
-  for (let i = 0; i < stationNumber; i++){
-    stations.push({
-      image: require('images/marker.png'),
-      text: 'Ide irhatsz',
-      position: position[i],
-    })
+export function generateStations(
+  themeId,
+  customerStations: ICustomerStation[],
+  stationNumber) {
+  if (customerStations.length > 0
+    && customerStations.length > Number(stationNumber)) {
+    customerStations.length = Number(stationNumber);
+  } else {
+    const newStationNumber = customerStations.length > 0 ?
+      stationNumber - customerStations.length
+      : stationNumber
+    const position = calculeteCustomerStationPositions(themeId, stationNumber)
+
+    for (let i = 0; i < newStationNumber; i++){
+      customerStations.push({
+        image: require('images/marker.png'),
+        text: 'Ide irhatsz',
+        position: position[i],
+      })
+    }
+    for (let i = 0; i < customerStations.length; i++){
+      customerStations[i].position = position[i];
+    }
   }
   return {
-    customerStations: stations
+    customerStations: customerStations
   }
 }
 
-function calculeteCustomerStationPositions(themeId, stationNumber){
+function calculeteCustomerStationPositions(themeId, stationNumber) {
+
   const currentTheme = THEMES[themeId];
   const stationNumberLength = currentTheme.stationPositions.length
   const stationGap = stationNumberLength / stationNumber;
@@ -29,14 +44,14 @@ function calculeteCustomerStationPositions(themeId, stationNumber){
   return calculatedPositions;
 }
 
-export function setImageForSelectedStation(
+export function setAttributeForSelectedStation(
   customerStations,
   selectedStationId,
-  selectedImage) {
+  attribute) {
 
-  console.log(selectedImage.image)
+  const selectedAttributeType = Object.keys(attribute)[0];
 
-  customerStations[selectedStationId].image = selectedImage.image;
+  customerStations[selectedStationId][selectedAttributeType] = attribute[selectedAttributeType];
   return {
     customerStations: customerStations
   }

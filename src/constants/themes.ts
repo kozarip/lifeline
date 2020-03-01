@@ -6,14 +6,14 @@ export const THEMES = [
     value: 0,
     stationPositions: [
       new Point(10, 20),
-      new Point(200, 250),
-      new Point(300, 450),
-      new Point(380, 400),
-      new Point(450, 400),
-      new Point(10, 800),
-      new Point(100, 800),
-      new Point(20, 800),
-      new Point(40, 800),
+      new Point(100, 20),
+      new Point(200, 20),
+      new Point(300, 20),
+      new Point(400, 20),
+      new Point(10, 500),
+      new Point(100, 500),
+      new Point(200, 500),
+      new Point(300, 500),
     ]
   },
   {
@@ -21,14 +21,14 @@ export const THEMES = [
     value: 1,
     stationPositions: [
       new Point(10, 20),
-      new Point(200, 250),
-      new Point(300, 450),
-      new Point(380, 400),
-      new Point(450, 400),
-      new Point(10, 800),
-      new Point(100, 800),
-      new Point(20, 800),
-      new Point(40, 800),
+      new Point(50, 20),
+      new Point(100, 20),
+      new Point(150, 20),
+      new Point(200, 20),
+      new Point(10, 100),
+      new Point(50, 100),
+      new Point(100, 100),
+      new Point(150, 100),
     ]
   }
 ]

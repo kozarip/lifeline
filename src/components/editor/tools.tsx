@@ -5,10 +5,11 @@ import { IToolsState } from 'interfaces/ITools';
 import StationFilter from './controllers/station-filter';
 import { CATEGORIES } from 'constants/categories';
 import { STATIONS } from 'constants/stations';
-import StationNumberBox from './stationNumberBox';
-import { IStationComponentProps } from 'interfaces/IStationComponent';
+import StationNumberBox from './station-number-box';
+import { IStationsEditorProps } from 'interfaces/IStationComponent';
 import { useDispatch } from 'react-redux';
-import { changeSelectedStationImage } from './store/actions';
+import { changeSelectedStationImage, changeSelectedStationText } from './store/actions';
+import StationsEditor from './station-editor';
 
 class Tools extends React.Component<{}, IToolsState>{
 
@@ -113,26 +114,11 @@ class Tools extends React.Component<{}, IToolsState>{
               this.state.selectedFilterWord + ' szóhoz tartozó állomások'
             }
           </h4>
-          {this.isSelectedFilterWordEmpty() ?
-            '' :
-            <input
-              className="toolTextbox"
-              placeholder="Írj valamit az állomáshoz"
-              defaultValue=""
-              name="stationText"
-            />
-          }
-          {items.map((item, i) => {
-            return (
-              <Station
-                isSelectedFilterWordEmpty = {this.isSelectedFilterWordEmpty.bind(this)}
-                selectFilter={this.selectFilter.bind(this)}
-                item={item}
-                i={i}
-                key={i}
-              />
-            )
-          })}
+          <StationsEditor
+            items={items}
+            isSelectedFilterWordEmpty = {this.isSelectedFilterWordEmpty.bind(this)}
+            selectFilter={this.selectFilter.bind(this)}
+          />
         </div>
       </React.Fragment>
     )
@@ -144,25 +130,6 @@ class Tools extends React.Component<{}, IToolsState>{
     const filterType = '';
     this.setState({ filterType, selectedFilterWord });
   }
-
-}
-
-const Station: React.FC<IStationComponentProps> = props => {
-
-  const dispatch = useDispatch();
-  return (
-    <div
-      className="item" key={props.i}
-      onClick={
-        props.isSelectedFilterWordEmpty() ?
-          () => { props.selectFilter(props.item.name, 'category') } :
-          () => { dispatch(changeSelectedStationImage(props.item.image)) }
-      }
-    >
-      <img src={`${props.item.image}`} />
-      <span>{props.item.name}</span>
-    </div>
-  )
 }
 
 export default Tools;

@@ -21,6 +21,7 @@ import Products from './components/home/products';
 import Contact from './components/home/contact';
 
 import Editor from './components/editor/editor';
+import Order from 'components/order/order';
 
 /**
  * TODO: dynamic language
@@ -36,8 +37,11 @@ const App: React.FC = () => {
         <Router>
           <Sticky>{({ style }) => <div style={{...style, zIndex: 9999}}><Header /></div>}</Sticky>
           <Switch>
-            <Route exact path="/editor">
+            <Route path="/editor">
               <Editor />
+            </Route>
+            <Route path="/order">
+              <Order />
             </Route>
             <Route path="/">
               <div id="homeContainer">

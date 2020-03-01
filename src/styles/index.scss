@@ -190,6 +190,10 @@ header{
   }
 }
 
+#secretPreview{
+  position: absolute;
+  left: -1000000px;
+}
 
 .howWorkStepContainer{
   background-color: $background-color;
@@ -402,7 +406,7 @@ header{
 
 
 
-#contactContainer{
+#inputContainer{
   font-size: 30px;
   font-weight: lighter;
 
@@ -440,6 +444,19 @@ header{
     textarea{
       display: block;
       padding-top: 20px;
+    }
+    fieldset{
+      border: none;
+      text-align: left;
+      padding: 10px 0;
+    }
+    input[type="checkbox"]{
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    label a{
+      color: #888;
     }
   }
 }
@@ -770,4 +787,8 @@ header{
       }
     }
   }
+}
+
+#editorContainer{
+  text-align: center;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact: React.FC = () => {
   return (
-    <section id="contactContainer"
+    <section id="inputContainer"
       className="componentContainer">
       <h2 className="componentTitle">Lépj velünk kapcsolatba!</h2>
       <p className="narrowHomeBox" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>

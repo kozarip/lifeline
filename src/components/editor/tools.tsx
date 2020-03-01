@@ -10,6 +10,7 @@ import { IStationsEditorProps } from 'interfaces/IStationComponent';
 import { useDispatch } from 'react-redux';
 import { changeSelectedStationImage, changeSelectedStationText } from './store/actions';
 import StationsEditor from './station-editor';
+import { TagsDictonary } from 'enums/station';
 
 class Tools extends React.Component<{}, IToolsState>{
 
@@ -58,6 +59,7 @@ class Tools extends React.Component<{}, IToolsState>{
   }
 
   renderSearchBox() {
+    const tags = Object.keys(TagsDictonary).map(key => TagsDictonary[key]);
     return (
       <div className="searchBox">
         <input
@@ -65,9 +67,15 @@ class Tools extends React.Component<{}, IToolsState>{
           className="formattedTextBox toolTextbox"
           placeholder="Kép keresés"
           defaultValue=""
-          name="searchStation"
+          name="stations"
+          list="tags"
           ref={this.searchInput}
         />
+        <datalist id="tags">
+          {
+            tags.map(tag => <option key={tag} value={tag} />)
+          }
+        </datalist>
 
         <button onClick={this.handleSearch}><IoIosSearch /></button>
       </div>

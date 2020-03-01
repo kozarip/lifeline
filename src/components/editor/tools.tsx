@@ -101,10 +101,10 @@ class Tools extends React.Component<{}, IToolsState>{
   renderStations() {
     let filteredStations = []
     switch (this.state.filterType) {
-    case ('category'):
+    case 'category':
       filteredStations = this.stationFilter.getStationsByCategory(this.state.selectedFilterWord);
       break;
-    case ('tag'):
+    case 'tag':
       filteredStations = this.stationFilter.getStationsByTag(this.state.selectedFilterWord);
       break;
     }

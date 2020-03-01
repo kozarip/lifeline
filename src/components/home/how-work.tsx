@@ -9,7 +9,7 @@ const howWork: React.FC = () => {
       <div className="howWorkStepContainer">
         <div className="howWorkStep wideHomeBox">
           <div className="circle">
-            <img src={require("../../images/step1.png")} />
+            <img src={require('../../images/step1.png')} />
           </div>
           <div className="stepContent">
             <h3>1. Lépés</h3>
@@ -20,7 +20,7 @@ const howWork: React.FC = () => {
       <div className="howWorkStepContainer whiteWorkStepContainer">
         <div className="howWorkStep wideHomeBox">
           <div className="circle">
-            <img src={require("../../images/step2.png")} />
+            <img src={require('../../images/step2.png')} />
           </div>
           <div className="stepContent">
             <h3>2. Lépés</h3>
@@ -31,7 +31,7 @@ const howWork: React.FC = () => {
       <div className="howWorkStepContainer">
         <div className="howWorkStep wideHomeBox">
           <div className="circle">
-            <img src={require("../../images/step3.png")} />
+            <img src={require('../../images/step3.png')} />
           </div>
           <div className="stepContent">
             <h3>3. Lépés</h3>
@@ -42,7 +42,7 @@ const howWork: React.FC = () => {
       <div className="howWorkStepContainer whiteWorkStepContainer">
         <div className="howWorkStep wideHomeBox">
           <div className="circle">
-            <img src={require("../../images/step4.png")} />
+            <img src={require('../../images/step4.png')} />
           </div>
           <div className="stepContent">
             <h3>4. Lépés</h3>

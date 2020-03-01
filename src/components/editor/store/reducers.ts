@@ -1,7 +1,7 @@
 import {
   generateStations,
   setAttributeForSelectedStation
-} from "../controllers/customer-station-helper";
+} from '../controllers/customer-station-helper';
 
 export const initialState = {
   stationNumber: 0,
@@ -11,9 +11,9 @@ export const initialState = {
 }
 
 export function reducer(state = initialState, action) {
-  console.log(action);
+  console.log(`Received action ${action}`);
   switch (action.type) {
-  case ('Change_Station_Number'):
+  case 'Change_Station_Number':
     return {
       ...state,
       ...action.stationNumber,
@@ -22,17 +22,17 @@ export function reducer(state = initialState, action) {
         state.customerStations,
         action.stationNumber.stationNumber),
     };
-  case ('Change_Theme_Image_Src'):
+  case 'Change_Theme_Image_Src':
     return {
       ...state,
       ...action.themeId
     }
-  case ('Change_Selected_Station_Id'):
+  case 'Change_Selected_Station_Id':
     return {
       ...state,
       ...action.selectedStationId,
     }
-  case ('Change_Selected_Station_Attribute'):
+  case 'Change_Selected_Station_Attribute':
     return {
       ...state,
       ...setAttributeForSelectedStation(

@@ -14,8 +14,8 @@ const Contact: React.FC = () => {
       </form>
       <h3 className="socialBoxTitle">A közösségi oldalakon is megtalálsz minket!</h3>
       <div className="socialBox">
-        <a href="#"><img src={require("../../images/bg_fb.png")} /></a>
-        <a href="#"><img src={require("../../images/bg_fb.png")} /></a>
+        <a href="#"><img src={require('../../images/bg_fb.png')} /></a>
+        <a href="#"><img src={require('../../images/bg_fb.png')} /></a>
       </div>
     </section>
   )

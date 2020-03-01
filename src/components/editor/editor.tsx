@@ -26,7 +26,7 @@ const Editor: React.FC = () => {
           <Route path="/order">
             <Order />
           </Route>
-          <Route path={["/", "/editor/themeselector"]}>
+          <Route path={['/', '/editor/themeselector']}>
             <ThemeSelector />
           </Route>
         </Switch>

@@ -1,5 +1,5 @@
 
-import { ICustomerStation } from "interfaces/ICustomerStation";
+import { ICustomerStation } from 'interfaces/ICustomerStation';
 import { THEMES } from 'constants/themes'
 
 export function generateStations(

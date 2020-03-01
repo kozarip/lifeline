@@ -1,4 +1,4 @@
-import Point from "components/editor/controllers/point";
+import Point from 'components/editor/controllers/point';
 
 export const THEMES = [
   {

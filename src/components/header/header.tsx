@@ -22,6 +22,7 @@ class Header extends React.Component {
           <Logo />
           <Menu />
         </div>
+        <div id="secretPreview"></div>
       </header>
     );
   }

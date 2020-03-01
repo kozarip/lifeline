@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { THEMES } from 'constants/themes'
 import { changeSelectedThemeId } from 'components/editor/store/actions';
-import { printDocument } from './controllers/print';
 
 const Preview: React.FC = () => {
   const {
@@ -58,7 +57,6 @@ const Preview: React.FC = () => {
         }
         <img src={THEMES[currentThemeId].image} />
       </section>
-      <button onClick={printDocument}>Nyomtatás (teszt)</button>
     </React.Fragment>
   )
 };

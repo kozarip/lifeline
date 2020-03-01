@@ -22,6 +22,14 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
     return this.state.isOpen ? 'open' : 'close';
   }
 
+  handleOrderClick = () => {
+    const previwContainer = document.getElementById('previewContainer');
+    const secretPreview = document.getElementById('secretPreview');
+    if (previwContainer && secretPreview) {
+      secretPreview.appendChild(previwContainer);
+    }
+  }
+
   render() {
     return (
       <aside id="toolbarContainer" className={this.getClassNames()}>
@@ -39,8 +47,11 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
             ''
         }
         <Link
+          onClick={this.handleOrderClick}
           className="btn smallBtn orderBtn"
-          to="/order">Megrendelés</Link>
+          to="/order">
+            Megrendelés
+        </Link>
       </aside>
     )
   }

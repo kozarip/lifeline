@@ -4,6 +4,7 @@ import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { IToolbarStates } from 'interfaces/IToolbar';
 import Tools from './tools';
 import { Link } from 'react-router-dom';
+import { removeSelections } from './preview';
 
 class Toolbar extends React.Component<{}, IToolbarStates> {
   constructor(props: any){
@@ -28,6 +29,7 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
     if (previwContainer && secretPreview) {
       secretPreview.appendChild(previwContainer);
     }
+    removeSelections();
   }
 
   render() {

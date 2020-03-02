@@ -59,7 +59,7 @@ const Order: React.FC = () => {
       <button
         id="print"
         className="btn smallBtn"
-        style={{ display: 'none' }}
+        /* style={{ display: 'none' }} */
         onClick={printDocument}>Nyomtatás (teszt)</button>
     </section>
   )

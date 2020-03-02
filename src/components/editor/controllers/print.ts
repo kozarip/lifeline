@@ -8,10 +8,12 @@ export function printDocument() {
     html2canvas(input)
       .then(canvas => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, 'JPEG', 0, 0);
+        const pdf = new jsPDF({
+          orientation: 'landscape',
+        });
+        pdf.addImage(imgData, 'JPEG', 0, -42);
         // pdf.output('dataurlnewwindow');
-        pdf.save('download.pdf');
+        pdf.save('eletutad.pdf');
       });
   }
 }

@@ -652,7 +652,7 @@ header{
   position: absolute;
   left: 10%;
   top: 30%;
-  color: #fff;
+  color: #444444;
   text-align: center;
 
   &.selected{
@@ -666,6 +666,7 @@ header{
 
   .stationPinText{
     display: block;
+    max-width: 150px;
   }
 }
 

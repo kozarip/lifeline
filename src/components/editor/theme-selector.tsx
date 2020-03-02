@@ -17,12 +17,8 @@ import AgeEditor from './age-editor';
 //TODO: move to an own;
 const ThemeSelector: React.FC = () => {
   const dispatch = useDispatch()
-  const stationNumber = useSelector(
-    (state: any) => state.stationNumber
-  )
   return (
     <ThemeSelectorBox
-      appStationNumber={stationNumber}
       saveSelectedTheme={ themeId => {
         dispatch(changeTheme(themeId))
       }}
@@ -70,9 +66,7 @@ class ThemeSelectorBox extends React.Component<IThemeSelectorProps, IThemeSelect
           <IoIosCloseCircleOutline
             className="closeModal"
             onClick={this.handleCloseModal} />
-          <AgeEditor
-            appStationNumber={this.props.appStationNumber}
-          />
+          <AgeEditor />
         </Modal>
       </section>
     )

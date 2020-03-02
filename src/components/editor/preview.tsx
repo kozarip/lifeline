@@ -29,13 +29,6 @@ const Preview: React.FC = () => {
     dispatch(changeSelectedThemeId(selected.dataset.id))
   }
 
-  const removeSelections = () => {
-    const allCustomerStation = document.getElementsByClassName('stationPin')
-    for (let i = 0; i < allCustomerStation.length; i++){
-      allCustomerStation[i].classList.remove('selected');
-    };
-  }
-
   return (
     <React.Fragment>
       <section style={{position: 'relative'}} id="previewContainer">
@@ -60,5 +53,12 @@ const Preview: React.FC = () => {
     </React.Fragment>
   )
 };
+
+export function removeSelections(){
+  const allCustomerStation = document.getElementsByClassName('stationPin')
+  for (let i = 0; i < allCustomerStation.length; i++){
+    allCustomerStation[i].classList.remove('selected');
+  };
+}
 
 export default Preview;

@@ -4,7 +4,6 @@ export interface IThemeSelectorStates {
 }
 
 export interface IThemeSelectorProps{
-  appStationNumber: number;
   saveSelectedTheme: any;
 }
 

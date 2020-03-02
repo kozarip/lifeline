@@ -6,10 +6,14 @@ import { printDocument } from 'components/editor/controllers/print';
 const Order: React.FC = () => {
 
   const handlePay = event => {
+    event.preventDefault();
     const conditions = document.getElementById('conditions');
+    const printBtn = document.getElementById('print')
     if (conditions && !(conditions as HTMLInputElement).checked) {
       alert('Kérlek fogadd el a felhasználási feltételeket')
-      event.preventDefault();
+    } else {
+      alert('Köszönjük a vásárlás, kattints a nyomtatás gombra');
+      (printBtn as HTMLElement).style.display = 'block';
     }
   }
 
@@ -52,7 +56,11 @@ const Order: React.FC = () => {
             value="Fizetés" />
         </form>
       </div>
-      <button onClick={printDocument}>Nyomtatás (teszt)</button>
+      <button
+        id="print"
+        className="btn smallBtn"
+        style={{ display: 'none' }}
+        onClick={printDocument}>Nyomtatás (teszt)</button>
     </section>
   )
 }

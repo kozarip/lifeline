@@ -43,7 +43,7 @@ const Order: React.FC = () => {
               id="conditions"
               name="conditions" />
             <label htmlFor="conditions">
-              <Link to="/conditions">Elfogadom a felhsználási feltételeket</Link>
+              <Link to="/conditions">Elfogadom a felhasználási feltételeket</Link>
             </label>
           </fieldset>
           <input

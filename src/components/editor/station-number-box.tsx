@@ -22,6 +22,21 @@ const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNum
    * const { stationNumber } = state;
    */
 
+  const handleStationInputEnter = (event: any) => {
+    if (event.key === 'Enter') {
+      setStationNumber();
+    }
+  }
+
+  const setStationNumber = () => {
+    const stationNumberInput = document.getElementById('stationNumber')
+    const selectedStationNumber =
+      stationNumberInput ?
+        (stationNumberInput as HTMLInputElement).value :
+        0
+    dispatch(changeStationNumber(selectedStationNumber))
+  }
+
   return (
     <div className="stationNumberBox">
       <label htmlFor="stationNumber">
@@ -32,19 +47,11 @@ const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNum
         className="formattedTextBox"
         type="text"
         defaultValue={stationNumber ? stationNumber : 0}
+        onKeyPress={handleStationInputEnter}
       />
       <button
         className="btn tinyBtn"
-        onClick={
-          () => {
-            const stationNumberInput = document.getElementById('stationNumber')
-            const selectedStationNumber =
-              stationNumberInput ?
-                (stationNumberInput as HTMLInputElement).value :
-                0
-            dispatch(changeStationNumber(selectedStationNumber))
-          }
-        }
+        onClick={setStationNumber}
       >Mentés</button>
     </div>
   )

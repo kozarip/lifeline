@@ -69,6 +69,7 @@ class Tools extends React.Component<{}, IToolsState>{
           defaultValue=""
           name="stations"
           list="tags"
+          onKeyDown={this.handleSearchEnter}
           ref={this.searchInput}
         />
         <datalist id="tags">
@@ -81,6 +82,12 @@ class Tools extends React.Component<{}, IToolsState>{
       </div>
 
     )
+  }
+
+  handleSearchEnter = (event: any) => {
+    if (event.key === 'Enter') {
+      this.handleSearch();
+    }
   }
 
   handleSearch = () => {

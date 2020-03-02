@@ -6,18 +6,20 @@ import {
   changeSelectedStationImage
 } from './store/actions';
 
-
-
 const StationsEditor: React.FC<IStationsEditorProps> = props => {
+
   const dispatch = useDispatch();
+
   return (
     <React.Fragment>
       {props.isSelectedFilterWordEmpty() ?
         '' :
         <input
+          id="stationTextBox"
           className="toolTextbox"
           placeholder="Írj valamit az állomáshoz"
           defaultValue=""
+          maxLength={25}
           onKeyUp={
             event => {
               dispatch(
@@ -45,6 +47,13 @@ const StationsEditor: React.FC<IStationsEditorProps> = props => {
       })}
     </React.Fragment>
   );
+}
+
+export function clearStationTextBox() {
+  const stationTextBox = document.getElementById('stationTextBox');
+  if (stationTextBox) {
+    (stationTextBox as HTMLInputElement).value = ''
+  }
 }
 
 export default StationsEditor;

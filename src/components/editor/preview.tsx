@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { THEMES } from 'constants/themes'
 import { changeSelectedThemeId } from 'components/editor/store/actions';
+import { clearStationTextBox } from './station-editor';
 
 const Preview: React.FC = () => {
   const {
@@ -18,6 +19,7 @@ const Preview: React.FC = () => {
 
   const handleCustomerStationClick = event => {
     removeSelections();
+    clearStationTextBox();
     let selected: HTMLElement;
     if (event.target.classList.contains('stationPin')) {
       selected = event.target;

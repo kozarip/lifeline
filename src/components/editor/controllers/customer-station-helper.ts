@@ -50,9 +50,12 @@ export function setAttributeForSelectedStation(
   attribute) {
 
   const selectedAttributeType = Object.keys(attribute)[0];
-
-  customerStations[selectedStationId][selectedAttributeType] = attribute[selectedAttributeType];
-  return {
-    customerStations: customerStations
+  if (selectedStationId) {
+    customerStations[selectedStationId][selectedAttributeType] = attribute[selectedAttributeType];
+    return {
+      customerStations: customerStations
+    }
+  } else {
+    alert('Kérlek elősször válaszd ki a szerkeszteni kívánt állomást');
   }
 }

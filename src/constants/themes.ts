@@ -9,7 +9,6 @@ export const THEMES = [
       new Point(200, 20),
       new Point(400, 20),
       new Point(600, 20),
-      new Point(400, 20),
       new Point(10, 200),
       new Point(200, 200),
       new Point(400, 200),
@@ -37,14 +36,13 @@ export const THEMES = [
     ]
   },
   {
-    image: require('images/themes/theme2.png'),
+    image: require('images/themes/theme3.jpg'),
     value: 1,
     stationPositions: [
       new Point(10, 20),
       new Point(200, 20),
       new Point(400, 20),
       new Point(600, 20),
-      new Point(400, 20),
       new Point(10, 200),
       new Point(200, 200),
       new Point(400, 200),

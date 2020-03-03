@@ -1,4 +1,4 @@
-export interface IStationsEditorProps{
+export interface IStationLister{
   isSelectedFilterWordEmpty: Function;
   selectFilter: Function;
   items: Item[];

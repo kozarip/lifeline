@@ -13,6 +13,10 @@ import Toolbar from './toolbar';
 import Order from 'components/order/order';
 
 const Editor: React.FC = () => {
+  window.onbeforeunload = function() {
+    return true;
+  };
+
   return (
     <Provider store={store}>
       <Router>

@@ -142,6 +142,7 @@ header{
     }
   }
 }
+
 .menu{
   display: none;
   flex: 1 1;
@@ -167,6 +168,16 @@ header{
     }
   }
 }
+
+.backToLink{
+  display: inline-block;
+  margin-top: 7px;
+  color: #888888;
+  font-size: 12px;font-weight: bold;
+  background-color: #ffb6a2;
+  padding: 3px 10px;
+}
+
 .profileMenuPoint{
   padding: 3px 10px;
   background-color: $highlight-color;
@@ -193,6 +204,10 @@ header{
 #secretPreview{
   position: absolute;
   left: -1000000px;
+  max-width: 1200px;
+  img{
+    width: 100%;
+  }
 }
 
 .howWorkStepContainer{
@@ -426,6 +441,7 @@ header{
       padding-left: 15px;
       padding-right: 15px;
       border: none;
+      font-family: 'Raleway', sans-serif;
       font-size: 30px;
       font-weight: bold;
       @media screen and (min-width: $tablet-breakpoint) {
@@ -671,6 +687,7 @@ header{
 }
 
 #toolbarContainer{
+  position: relative;
   flex-basis: 20%;
   padding: 5px 10px;
   margin-bottom: 30px;
@@ -694,6 +711,13 @@ header{
   .orderBtn{
     position: absolute;
     bottom: 0;
+    @media screen and (max-width: 1440px) {
+      position: relative;
+      display: table;
+      margin: 20px auto;
+      padding: 5px 10px;
+      font-size: 25px;
+    }
   }
 
   .btnToolbarToggle{
@@ -738,15 +762,6 @@ header{
     color: #888888;
     font-size: 20px;
     border: 1px solid $highlight-color;
-  }
-
-  .backToLink{
-    display: inline-block;
-    margin-top: 7px;
-    color: #888888;
-    font-size: 12px;font-weight: bold;
-    background-color: #ffb6a2;
-    padding: 3px 10px;
   }
 
   .searchBox{

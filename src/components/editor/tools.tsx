@@ -6,11 +6,9 @@ import StationFilter from './controllers/station-filter';
 import { CATEGORIES } from 'constants/categories';
 import { STATIONS } from 'constants/stations';
 import StationNumberBox from './station-number-box';
-import { IStationsEditorProps } from 'interfaces/IStationComponent';
-import { useDispatch } from 'react-redux';
-import { changeSelectedStationImage, changeSelectedStationText } from './store/actions';
-import StationsEditor from './station-editor';
+import StationLister from './station-lister';
 import { TagsDictonary } from 'enums/station';
+import StationLabelBox from './station-label-box';
 
 class Tools extends React.Component<{}, IToolsState>{
 
@@ -71,6 +69,7 @@ class Tools extends React.Component<{}, IToolsState>{
           list="tags"
           onKeyDown={this.handleSearchEnter}
           ref={this.searchInput}
+          onInput={this.handleSearch}
         />
         <datalist id="tags">
           {
@@ -122,6 +121,7 @@ class Tools extends React.Component<{}, IToolsState>{
     return (
       <React.Fragment>
         <div className="toolBox">
+          <StationLabelBox />
           <h4 className="capitalize">
             {this.isSelectedFilterWordEmpty() ?
               'Kategóriák'
@@ -129,7 +129,7 @@ class Tools extends React.Component<{}, IToolsState>{
               this.state.selectedFilterWord + ' szóhoz tartozó állomások'
             }
           </h4>
-          <StationsEditor
+          <StationLister
             items={items}
             isSelectedFilterWordEmpty = {this.isSelectedFilterWordEmpty.bind(this)}
             selectFilter={this.selectFilter.bind(this)}

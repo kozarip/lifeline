@@ -12,7 +12,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header>
+      <header id="header">
         <HamburgerMenu className="hamburgerMenu">
           <Logo />
           <Menu />

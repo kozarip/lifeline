@@ -55,6 +55,11 @@ const Order: React.FC = () => {
             type="submit"
             value="Fizetés" />
         </form>
+        <Link
+          className="btn smallBtn"
+          to="/editor/editor">
+          Vissza a szerkesztésre
+        </Link>
       </div>
       <button
         id="print"

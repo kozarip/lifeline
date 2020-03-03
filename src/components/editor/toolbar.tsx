@@ -24,12 +24,12 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
   }
 
   handleOrderClick = () => {
+    removeSelections();
     const previwContainer = document.getElementById('previewContainer');
     const secretPreview = document.getElementById('secretPreview');
     if (previwContainer && secretPreview) {
-      secretPreview.appendChild(previwContainer);
+      (secretPreview as HTMLElement).innerHTML = previwContainer.innerHTML;
     }
-    removeSelections();
   }
 
   render() {

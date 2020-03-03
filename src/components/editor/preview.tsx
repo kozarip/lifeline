@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { THEMES } from 'constants/themes'
 import { changeSelectedThemeId } from 'components/editor/store/actions';
-import { clearStationTextBox } from './station-editor';
+import { clearStationTextBox } from './station-label-box';
 
 const Preview: React.FC = () => {
   const {

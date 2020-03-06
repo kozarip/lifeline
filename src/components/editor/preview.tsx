@@ -45,7 +45,10 @@ const Preview: React.FC = () => {
                 onClick={handleCustomerStationClick}
               >
                 <img src={customerStation.image} />
-                <span className="stationPinText">{customerStation.text}</span>
+                <span
+                  className="stationPinText">
+                  {customerStation.text}
+                </span>
               </div>
             )
           })
@@ -61,6 +64,15 @@ export function removeSelections(){
   for (let i = 0; i < allCustomerStation.length; i++){
     allCustomerStation[i].classList.remove('selected');
   };
+}
+
+export function removeDefaultLabels(){
+  const customerStationsPinLabels = document.getElementsByClassName('stationPinText');
+  for (let i = 0; i < customerStationsPinLabels.length; i++){
+    if (customerStationsPinLabels[i].innerHTML === 'Ide irhatsz') {
+      (customerStationsPinLabels[i] as HTMLElement).style.display = 'none';
+    }
+  }
 }
 
 export default Preview;

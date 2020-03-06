@@ -4,7 +4,7 @@ import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { IToolbarStates } from 'interfaces/IToolbar';
 import Tools from './tools';
 import { Link } from 'react-router-dom';
-import { removeSelections } from './preview';
+import { removeSelections, removeDefaultLabels } from './preview';
 
 class Toolbar extends React.Component<{}, IToolbarStates> {
   constructor(props: any){
@@ -25,6 +25,7 @@ class Toolbar extends React.Component<{}, IToolbarStates> {
 
   handleOrderClick = () => {
     removeSelections();
+    removeDefaultLabels();
     const previwContainer = document.getElementById('previewContainer');
     const secretPreview = document.getElementById('secretPreview');
     if (previwContainer && secretPreview) {

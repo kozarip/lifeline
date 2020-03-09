@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import { useAuth0 } from '../../react-auth0-spa';
 
 const Menu: React.FC = () => {
 
@@ -10,7 +11,13 @@ const Menu: React.FC = () => {
       left: 0,
       behavior: "smooth"
     })
+
   };
+
+  const {
+    isAuthenticated,
+    loginWithRedirect,
+    logout } = useAuth0();
   return (
     <ul className="menu">
       <li>
@@ -62,9 +69,17 @@ const Menu: React.FC = () => {
         </Link>
       </li>
       <li>
-        <a className="profileMenuPoint" href="profile">
-          Profilom
-        </a>
+        {!isAuthenticated && (
+          <a  className="profileMenuPoint" onClick={loginWithRedirect}>Bejelentkezés</a>
+        )}
+        {isAuthenticated && (
+          <a className="profileMenuPoint" >Profil</a>
+        )
+        }
+        <div id="profilMenuLayer">
+          <Link to="/profile">Profilom</Link>
+          <a onClick={logout}>Kijelentkezés</a>
+        </div>
       </li>
     </ul>
   )

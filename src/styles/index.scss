@@ -169,6 +169,20 @@ header{
   }
 }
 
+
+#profilMenuLayer{
+  display: none;
+  position: absolute;
+  width: 120px;
+  background-color: #fff;
+  padding: 10px;
+
+  a{
+    display: block;
+    text-align: center;
+  }
+}
+
 .backToLink{
   display: inline-block;
   margin-top: 7px;

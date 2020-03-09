@@ -22,6 +22,7 @@ import Contact from './components/home/contact';
 
 import Editor from './components/editor/editor';
 import Order from 'components/order/order';
+import Profile from './components/home/Profile';
 
 /**
  * TODO: dynamic language
@@ -42,6 +43,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/order">
               <Order />
+            </Route>
+            <Route path="/profile">
+              <Profile />
             </Route>
             <Route path="/">
               <div id="homeContainer">

@@ -11,7 +11,6 @@ const Menu: React.FC = () => {
       left: 0,
       behavior: "smooth"
     })
-
   };
 
   const {
@@ -74,12 +73,13 @@ const Menu: React.FC = () => {
         )}
         {isAuthenticated && (
           <a className="profileMenuPoint" >Profil</a>
-        )
-        }
-        <div id="profilMenuLayer">
-          <Link to="/profile">Profilom</Link>
-          <a onClick={logout}>Kijelentkezés</a>
-        </div>
+        )}
+        {isAuthenticated && (
+          <div id="profilMenuLayer">
+            <Link to="/profile">Profilom</Link>
+            <a onClick={logout}>Kijelentkezés</a>
+          </div>
+        )}
       </li>
     </ul>
   )

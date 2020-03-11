@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { printDocument } from 'components/editor/controllers/print';
+import { printDocument } from 'utils/print';
 
 
 const Order: React.FC = () => {

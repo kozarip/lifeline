@@ -1,7 +1,7 @@
 import {
   generateStations,
   setAttributeForSelectedStation
-} from '../controllers/customer-station-helper';
+} from '../../../utils/customer-station-helper';
 
 export const initialState = {
   stationNumber: 0,

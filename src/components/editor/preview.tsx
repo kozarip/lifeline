@@ -44,6 +44,10 @@ const Preview: React.FC = () => {
                 data-id={i}
                 onClick={handleCustomerStationClick}
               >
+                <span
+                  className="stationPinText">
+                  {customerStation.date}
+                </span>
                 <img src={customerStation.image} />
                 <span
                   className="stationPinText">

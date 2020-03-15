@@ -121,7 +121,8 @@ class Tools extends React.Component<{}, IToolsState>{
     return (
       <React.Fragment>
         <div className="toolBox">
-          <StationLabelBox />
+          <StationLabelBox type="date" />
+          <StationLabelBox type="text" />
           <h4 className="capitalize">
             {this.isSelectedFilterWordEmpty() ?
               'Kategóriák'

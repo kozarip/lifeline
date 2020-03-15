@@ -11,7 +11,7 @@ export const initialState = {
 }
 
 export function reducer(state = initialState, action) {
-  console.log(`Received action ${action}`);
+  console.log({'Received action': action});
   switch (action.type) {
   case 'Change_Station_Number':
     return {
@@ -38,7 +38,9 @@ export function reducer(state = initialState, action) {
       ...setAttributeForSelectedStation(
         state.customerStations,
         state.selectedStationId,
-        action.image ? action.image : action.text)
+        Object.keys(action.label)[0],
+        action.label
+      )
     }
   default:
     return state

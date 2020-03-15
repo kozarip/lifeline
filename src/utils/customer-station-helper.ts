@@ -19,6 +19,7 @@ export function generateStations(
       customerStations.push({
         image: require('images/marker.png'),
         text: 'Ide irhatsz',
+        date: 'Dátum',
         position: position[i],
       })
     }
@@ -47,9 +48,8 @@ function calculeteCustomerStationPositions(themeId, stationNumber) {
 export function setAttributeForSelectedStation(
   customerStations,
   selectedStationId,
+  selectedAttributeType,
   attribute) {
-
-  const selectedAttributeType = Object.keys(attribute)[0];
   if (selectedStationId) {
     customerStations[selectedStationId][selectedAttributeType] = attribute[selectedAttributeType];
     return {

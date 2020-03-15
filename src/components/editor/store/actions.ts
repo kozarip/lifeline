@@ -27,16 +27,9 @@ export function changeSelectedThemeId(selectedStationId) {
   }
 }
 
-export function changeSelectedStationImage(image) {
+export function changeSelectedStationAttribute(type, label) {
   return {
     type: 'Change_Selected_Station_Attribute',
-    image: { image },
-  }
-}
-
-export function changeSelectedStationText(text) {
-  return {
-    type: 'Change_Selected_Station_Attribute',
-    text: { text },
+    label: { [type]: label },
   }
 }

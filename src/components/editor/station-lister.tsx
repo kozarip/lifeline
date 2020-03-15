@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { IStationLister } from '../../interfaces/IStationLister';
-import { changeSelectedStationImage } from './store/actions';
+import { changeSelectedStationAttribute } from './store/actions';
 
 const StationLister: React.FC<IStationLister> = props => {
 
@@ -16,7 +16,7 @@ const StationLister: React.FC<IStationLister> = props => {
             onClick={
               props.isSelectedFilterWordEmpty() ?
                 () => { props.selectFilter(item.name, 'category') } :
-                () => { dispatch(changeSelectedStationImage(item.image)) }
+                () => { dispatch(changeSelectedStationAttribute('image', item.image)) }
             }
           >
             <img src={`${item.image}`} />

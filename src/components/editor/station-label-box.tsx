@@ -1,23 +1,28 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { changeSelectedStationText } from './store/actions';
+import { changeSelectedStationAttribute } from './store/actions';
+import { IStationLabelProps } from '../../interfaces/IStationLabel';
 
-const StationLabelBox: React.FC = props => {
+const StationLabelBox: React.FC<IStationLabelProps> = props => {
 
   const dispatch = useDispatch();
 
   return (
     <React.Fragment>
       <input
-        id="stationTextBox"
+        id="stationTextBoxEditor"
         className="toolTextbox"
-        placeholder="Írj valamit az állomáshoz"
+        placeholder={
+          props.type === 'text' ?
+            'Irj szöveget az állomáshoz'
+            : 'Irj dátumot az állomáshoz'
+        }
         defaultValue=""
         maxLength={25}
         onKeyUp={
           event => {
             dispatch(
-              changeSelectedStationText((event.target as HTMLInputElement).value)
+              changeSelectedStationAttribute(props.type, (event.target as HTMLInputElement).value)
             )
           }
         }
@@ -28,9 +33,9 @@ const StationLabelBox: React.FC = props => {
 }
 
 export function clearStationTextBox() {
-  const stationTextBox = document.getElementById('stationTextBox');
-  if (stationTextBox) {
-    (stationTextBox as HTMLInputElement).value = ''
+  const stationTextBoxes = document.getElementsByClassName('stationTextBoxEditor');
+  for (let i = 0; i < stationTextBoxes.length; i++) {
+    (stationTextBoxes[i] as HTMLInputElement).value = ''
   }
 }
 

@@ -38,8 +38,8 @@ export function reducer(state = initialState, action) {
       ...setAttributeForSelectedStation(
         state.customerStations,
         state.selectedStationId,
-        Object.keys(action.label)[0],
-        action.label
+        Object.keys(action.attribute)[0],
+        action.attribute
       )
     }
   default:

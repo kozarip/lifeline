@@ -27,9 +27,9 @@ export function changeSelectedThemeId(selectedStationId) {
   }
 }
 
-export function changeSelectedStationAttribute(type, label) {
+export function changeSelectedStationAttribute(type, attribute) {
   return {
     type: 'Change_Selected_Station_Attribute',
-    label: { [type]: label },
+    attribute: { [type]: attribute },
   }
 }

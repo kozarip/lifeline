@@ -186,6 +186,8 @@ header{
 .backToLink{
   display: inline-block;
   margin-top: 7px;
+  cursor: pointer;
+  text-decoration: underline;
   color: #888888;
   font-size: 12px;font-weight: bold;
   background-color: #ffb6a2;
@@ -223,6 +225,14 @@ header{
     width: 100%;
   }
 }
+
+#pictureMainTitle{
+  position: absolute;
+  top: 0;
+  right: 10%;
+  color: #000;
+}
+
 
 .howWorkStepContainer{
   background-color: $background-color;
@@ -670,6 +680,20 @@ header{
 }
 
 
+.previewInput{
+  display: block;
+  max-width: 190px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+
+  &.mainTitleEditor{
+    font-size: 28px;
+  }
+}
+
 .customerStationWrapper{
   display: block;
   position: relative;
@@ -768,14 +792,6 @@ header{
     margin-bottom: 20px;
     font-size: 26px;
     margin-top: 0;
-  }
-
-  .toolTextbox{
-    width:100%;
-    padding: 5px;
-    color: #888888;
-    font-size: 20px;
-    border: 1px solid $highlight-color;
   }
 
   .searchBox{

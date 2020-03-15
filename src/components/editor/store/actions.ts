@@ -20,6 +20,13 @@ export function changeStationNumber(stationNumber) {
   }
 }
 
+export function changeMainTitle(mainTitle) {
+  return {
+    type: 'Change_Main_Title',
+    mainTitle: { mainTitle }
+  }
+}
+
 export function changeSelectedThemeId(selectedStationId) {
   return {
     type: 'Change_Selected_Station_Id',

@@ -2,12 +2,14 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { THEMES } from 'constants/themes'
 import { changeSelectedThemeId } from 'components/editor/store/actions';
-import { clearStationTextBox } from './station-label-box';
+import StationLabelBox, { clearStationTextBox } from './station-label-box';
+import MainTitleEditor from './main-title-editor';
 
 const Preview: React.FC = () => {
   const {
     themeId,
     customerStations,
+    mainTitle,
   } = useSelector(
     (state: any) => state
   );
@@ -33,7 +35,8 @@ const Preview: React.FC = () => {
 
   return (
     <React.Fragment>
-      <section style={{position: 'relative'}} id="previewContainer">
+      <section style={{ position: 'relative' }} id="previewContainer">
+        <MainTitleEditor />
         {
           customerStations.map((customerStation, i) => {
             return (
@@ -44,14 +47,16 @@ const Preview: React.FC = () => {
                 data-id={i}
                 onClick={handleCustomerStationClick}
               >
+                <StationLabelBox type="date" stationNumber={i} />
                 <span
                   className="stationPinText">
-                  {customerStation.date}
+                  {/* {customerStation.date} */}
                 </span>
                 <img src={customerStation.image} />
+                <StationLabelBox type="text" stationNumber={i} />
                 <span
                   className="stationPinText">
-                  {customerStation.text}
+                  {/* {customerStation.text} */}
                 </span>
               </div>
             )
@@ -73,7 +78,10 @@ export function removeSelections(){
 export function removeDefaultLabels(){
   const customerStationsPinLabels = document.getElementsByClassName('stationPinText');
   for (let i = 0; i < customerStationsPinLabels.length; i++){
-    if (customerStationsPinLabels[i].innerHTML === 'Ide irhatsz') {
+    if (
+      customerStationsPinLabels[i].innerHTML === 'Ide irhatsz'
+      || customerStationsPinLabels[i].innerHTML === 'Dátum'
+    ) {
       (customerStationsPinLabels[i] as HTMLElement).style.display = 'none';
     }
   }

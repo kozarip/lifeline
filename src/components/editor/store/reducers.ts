@@ -8,6 +8,7 @@ export const initialState = {
   themeId: 0,
   customerStations: [],
   selectedStationId: 0,
+  mainTitle: 'Cím helye'
 }
 
 export function reducer(state = initialState, action) {
@@ -26,6 +27,11 @@ export function reducer(state = initialState, action) {
     return {
       ...state,
       ...action.themeId
+    }
+  case 'Change_Main_Title':
+    return {
+      ...state,
+      ...action.mainTitle
     }
   case 'Change_Selected_Station_Id':
     return {

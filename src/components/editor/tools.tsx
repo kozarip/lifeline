@@ -9,6 +9,7 @@ import StationNumberBox from './station-number-box';
 import StationLister from './station-lister';
 import { TagsDictonary } from 'enums/station';
 import StationLabelBox from './station-label-box';
+import MainTitleEditor from './main-title-editor';
 
 class Tools extends React.Component<{}, IToolsState>{
 
@@ -121,8 +122,8 @@ class Tools extends React.Component<{}, IToolsState>{
     return (
       <React.Fragment>
         <div className="toolBox">
-          <StationLabelBox type="date" />
-          <StationLabelBox type="text" />
+          {/* <StationLabelBox type="date" />
+          <StationLabelBox type="text" /> */}
           <h4 className="capitalize">
             {this.isSelectedFilterWordEmpty() ?
               'Kategóriák'

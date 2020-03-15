@@ -1,25 +1,28 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeSelectedStationAttribute } from './store/actions';
 import { IStationLabelProps } from '../../interfaces/IStationLabel';
 
 const StationLabelBox: React.FC<IStationLabelProps> = props => {
 
   const dispatch = useDispatch();
+  const {
+    selectedStationId,
+    customerStations
+  } = useSelector((state: any) => state);
 
   return (
     <React.Fragment>
       <input
-        id="stationTextBoxEditor"
-        className="toolTextbox"
-        placeholder={
-          props.type === 'text' ?
-            'Irj szöveget az állomáshoz'
-            : 'Irj dátumot az állomáshoz'
+        className="stationTextBoxEditor previewInput"
+        type={props.type}
+        value={
+          customerStations.length ?
+            customerStations[props.stationNumber][props.type]
+            : ""
         }
-        defaultValue=""
         maxLength={25}
-        onKeyUp={
+        onChange={
           event => {
             dispatch(
               changeSelectedStationAttribute(props.type, (event.target as HTMLInputElement).value)

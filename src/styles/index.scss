@@ -10,6 +10,7 @@ body{
   color: #888888;
   padding: 0 0 30px 0;
   box-sizing: border-box;
+  background-color: #fff;
   /* overflow-x: hidden; */
 }
 
@@ -19,7 +20,11 @@ body{
 
 *:focus{
   outline-color: $highlight-color;
- }
+}
+
+::backdrop {
+  background-color: white !important;
+}
 
 .wideHomeBox{
   max-width: 1080px;
@@ -183,7 +188,7 @@ header{
   }
 }
 
-.backToLink{
+.toolsButton{
   display: inline-block;
   margin-top: 7px;
   cursor: pointer;
@@ -691,6 +696,18 @@ header{
 
   &.mainTitleEditor{
     font-size: 28px;
+    max-width: 400px;
+  }
+  &[type=date]{
+    width: 100%;
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      display: none;
+    }
+    &::-webkit-calendar-picker-indicator {
+        -webkit-appearance: none;
+        display: none;
+    }
   }
 }
 
@@ -799,6 +816,7 @@ header{
 
     .toolTextbox{
       width: calc(100% - 32px);
+      padding: 5px;
     }
     button{
       padding: 5px;

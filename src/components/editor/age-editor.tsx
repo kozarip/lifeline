@@ -11,6 +11,12 @@ const AgeEditor: React.FC = () => {
   )
   const dispatch = useDispatch();
 
+  const handleAgeInputEnter = (event: any) => {
+    if (event.key === 'Enter') {
+      setRecommendedStationNumber();
+    }
+  }
+
   const setRecommendedStationNumber = () => {
     let age = 0
     const ageInput = document.getElementById('ageInput');
@@ -32,6 +38,7 @@ const AgeEditor: React.FC = () => {
             id="ageInput"
             className="formattedTextBox textBox"
             type="number"
+            onKeyPress={handleAgeInputEnter}
             placeholder="Életkorod" />
           <a
             className="btn smallBtn"

@@ -15,6 +15,7 @@ class Tools extends React.Component<{}, IToolsState>{
 
   private stationFilter: any;
   private searchInput = React.createRef<HTMLInputElement>();
+  private mainEditorContainer
 
   constructor(props) {
     super(props)
@@ -22,24 +23,45 @@ class Tools extends React.Component<{}, IToolsState>{
     this.state = {
       filterType: '',
       selectedFilterWord: '',
+      isFullScreen: false
     }
+  }
+
+  componentDidMount() {
+    this.mainEditorContainer = document.getElementById("mainEditorContainer");
   }
 
   render() {
     return (
       <div id="toolsContainer">
         {
-          this.isSelectedFilterWordEmpty() ?
+          this.isSelectedFilterWordEmpty() && !this.state.isFullScreen ?
             <Link
-              className="backToLink"
+              className="toolsButton"
               to="/editor">
               Vissza a témákhoz
             </Link>
             :
+            !this.isSelectedFilterWordEmpty() &&
             <span
-              className="backToLink"
+              className="toolsButton"
               onClick={this.cleanSelectedFilterWord}>
               Vissza a kategóriákhoz
+            </span>
+        }
+        <br />
+        {
+          this.state.isFullScreen ?
+            <span
+              className="toolsButton"
+              onClick={this.closeFullScreen}>
+              Kilépés teljes képernyő módból
+            </span>
+            :
+            <span
+              className="toolsButton"
+              onClick={this.openFullScreen}>
+              Váltás teljes képernyő módra
             </span>
         }
         {this.renderSearchBox()}
@@ -57,6 +79,26 @@ class Tools extends React.Component<{}, IToolsState>{
     return this.state.selectedFilterWord === '';
   }
 
+  closeFullScreen = () => {
+    this.setState({isFullScreen: false});
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+
+  openFullScreen = () => {
+    this.setState({ isFullScreen: true });
+    if (this.mainEditorContainer.requestFullscreen) {
+      this.mainEditorContainer.requestFullscreen();
+    } else if (this.mainEditorContainer.mozRequestFullScreen) { /* Firefox */
+      this.mainEditorContainer.mozRequestFullScreen();
+    } else if (this.mainEditorContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      this.mainEditorContainer.webkitRequestFullscreen();
+    } else if (this.mainEditorContainer.msRequestFullscreen) { /* IE/Edge */
+      this.mainEditorContainer.msRequestFullscreen();
+    }
+  }
+
   renderSearchBox() {
     const tags = Object.keys(TagsDictonary).map(key => TagsDictonary[key]);
     return (
@@ -70,7 +112,6 @@ class Tools extends React.Component<{}, IToolsState>{
           list="tags"
           onKeyDown={this.handleSearchEnter}
           ref={this.searchInput}
-          onInput={this.handleSearch}
         />
         <datalist id="tags">
           {

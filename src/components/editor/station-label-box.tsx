@@ -16,10 +16,10 @@ const StationLabelBox: React.FC<IStationLabelProps> = props => {
       <input
         className="stationTextBoxEditor previewInput"
         type={props.type}
+        required
         value={
-          customerStations.length ?
+          customerStations.length &&
             customerStations[props.stationNumber][props.type]
-            : ""
         }
         maxLength={25}
         onChange={

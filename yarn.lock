@@ -1821,11 +1821,6 @@
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
   integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
-"@types/smooth-scroll@^16.1.0":
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/@types/smooth-scroll/-/smooth-scroll-16.1.0.tgz#903859ef225dc6cdbfa0bde4406ef539d7a5a7f7"
-  integrity sha512-7vcLoVwdalVHBjVoPVzBISN8mHx7oqPOXyTgkXb3OVRgjdeed27TqRc5+D1sub5QozNfJ9SStbR/Kpf0TxXTKQ==
-
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -9854,6 +9849,14 @@ react-modal@^3.11.1:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
+react-paypal-button-v2@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/react-paypal-button-v2/-/react-paypal-button-v2-2.6.1.tgz#fca4132cafcf9205ad49c961e105885d8f86a3b2"
+  integrity sha512-ia1zzdRgziSfnJ/UueM6i0omEocbv4cge3mBRmpA6WSyxsX6c501HWHVwvXMEbTDCPK5+0ZKewhBzf/wq618Cg==
+  dependencies:
+    prop-types "^15.7.2"
+    rimraf "^3.0.0"
+
 react-redux@^7.1.3:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.1.3.tgz#717a3d7bbe3a1b2d535c94885ce04cdc5a33fc79"
@@ -10381,6 +10384,13 @@ rimraf@2.6.3:
   dependencies:
     glob "^7.1.3"
 
+rimraf@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
+  integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
+  dependencies:
+    glob "^7.1.3"
+
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-2.0.2.tgz#a1c1a6f624751577ba5d07914cbc92850585890c"
@@ -10719,11 +10729,6 @@ slice-ansi@^2.1.0:
     ansi-styles "^3.2.0"
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
-
-smooth-scroll@^16.1.0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/smooth-scroll/-/smooth-scroll-16.1.0.tgz#c811c63db67215d30847745ba0732feb3291947f"
-  integrity sha512-V5b8ekIekZ3xJ6f0sPsLgEbN5YT8gX0Q6yNjZXTKgqjH9dBGadZ0P50fhP0rLRBGifc44qfI3rnWNM+lebhJag==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

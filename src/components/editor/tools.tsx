@@ -29,6 +29,12 @@ class Tools extends React.Component<{}, IToolsState>{
 
   componentDidMount() {
     this.mainEditorContainer = document.getElementById("mainEditorContainer");
+    document.addEventListener('fullscreenchange',
+      () => {
+        if (!document.fullscreenElement)
+          this.setState({ isFullScreen: false })
+      }, false);
+
   }
 
   render() {

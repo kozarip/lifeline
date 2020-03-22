@@ -7,7 +7,6 @@ const StationLabelBox: React.FC<IStationLabelProps> = props => {
 
   const dispatch = useDispatch();
   const {
-    selectedStationId,
     customerStations
   } = useSelector((state: any) => state);
 
@@ -33,13 +32,6 @@ const StationLabelBox: React.FC<IStationLabelProps> = props => {
       />
     </React.Fragment>
   );
-}
-
-export function clearStationTextBox() {
-  const stationTextBoxes = document.getElementsByClassName('stationTextBoxEditor');
-  for (let i = 0; i < stationTextBoxes.length; i++) {
-    (stationTextBoxes[i] as HTMLInputElement).value = ''
-  }
 }
 
 export default StationLabelBox;

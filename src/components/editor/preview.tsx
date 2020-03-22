@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { THEMES } from 'constants/themes'
 import { changeSelectedThemeId } from 'components/editor/store/actions';
-import StationLabelBox, { clearStationTextBox } from './station-label-box';
+import StationLabelBox from './station-label-box';
 import MainTitleEditor from './main-title-editor';
 
 const Preview: React.FC = () => {
@@ -21,7 +21,6 @@ const Preview: React.FC = () => {
 
   const handleCustomerStationClick = event => {
     removeSelections();
-    clearStationTextBox();
     let selected: HTMLElement;
     if (event.target.classList.contains('stationPin')) {
       selected = event.target;
@@ -50,13 +49,11 @@ const Preview: React.FC = () => {
                 <StationLabelBox type="date" stationNumber={i} />
                 <span
                   className="stationPinText">
-                  {/* {customerStation.date} */}
                 </span>
                 <img src={customerStation.image} />
                 <StationLabelBox type="text" stationNumber={i} />
                 <span
                   className="stationPinText">
-                  {/* {customerStation.text} */}
                 </span>
               </div>
             )
@@ -76,11 +73,12 @@ export function removeSelections(){
 }
 
 export function removeDefaultLabels(){
-  const customerStationsPinLabels = document.getElementsByClassName('stationPinText');
+  const customerStationsPinLabels = document.getElementsByClassName('previewInput');
   for (let i = 0; i < customerStationsPinLabels.length; i++){
     if (
-      customerStationsPinLabels[i].innerHTML === 'Ide irhatsz'
-      || customerStationsPinLabels[i].innerHTML === 'Dátum'
+      (customerStationsPinLabels[i] as HTMLInputElement).value === 'Ide irhatsz'
+      || (customerStationsPinLabels[i] as HTMLInputElement).value === 'Dátum'
+      || (customerStationsPinLabels[i] as HTMLInputElement).value === 'Cím helye'
     ) {
       (customerStationsPinLabels[i] as HTMLElement).style.display = 'none';
     }

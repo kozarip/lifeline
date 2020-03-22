@@ -11,6 +11,7 @@ import ThemeSelector from './theme-selector';
 import PreView from './preview';
 import Toolbar from './toolbar';
 import Order from 'components/order/order';
+import Complete from 'components/order/complete';
 
 const Editor: React.FC = () => {
   window.onbeforeunload = function() {
@@ -21,7 +22,7 @@ const Editor: React.FC = () => {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route path="/editor/editor" exact>
+          <Route path="/editor/editor">
             <section id="mainEditorContainer">
               <PreView />
               <Toolbar />
@@ -29,6 +30,9 @@ const Editor: React.FC = () => {
           </Route>
           <Route path="/order">
             <Order />
+          </Route>
+          <Route path="/complete">
+            <Complete />
           </Route>
           <Route path={['/', '/editor/themeselector']}>
             <ThemeSelector />

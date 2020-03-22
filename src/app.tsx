@@ -21,8 +21,9 @@ import Products from './components/home/products';
 import Contact from './components/home/contact';
 
 import Editor from './components/editor/editor';
-import Order from 'components/order/order';
+import Order from './components/order/order';
 import Profile from './components/home/Profile';
+import Complete from './components/order/complete';
 
 /**
  * TODO: dynamic language
@@ -31,6 +32,9 @@ import Profile from './components/home/Profile';
 */
 const catalogs = { hu: catalogHu };
 
+/**
+ * TODO: remove order route from it
+ */
 const App: React.FC = () => {
   return (
     <I18nProvider language="hu" catalogs={catalogs}>

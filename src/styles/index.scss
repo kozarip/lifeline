@@ -688,6 +688,7 @@ header{
 .previewInput{
   display: block;
   max-width: 190px;
+  width: 100%;
   background: transparent;
   border: none;
   font-size: 20px;
@@ -700,13 +701,10 @@ header{
   }
   &[type=date]{
     width: 100%;
+    margin-left: 10px;
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       display: none;
-    }
-    &::-webkit-calendar-picker-indicator {
-        -webkit-appearance: none;
-        display: none;
     }
   }
 }
@@ -784,6 +782,10 @@ header{
     padding: 0;
     text-align: center;
   }
+}
+
+.payBox{
+  margin-top: 30px;
 }
 
 .stationNumberBox{

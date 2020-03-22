@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { printDocument } from 'utils/print';
-
+import Pay from './pay';
 
 const Order: React.FC = () => {
+
+  const [isFormFilled, setIsFormFilled] = useState(false);
 
   const handlePay = event => {
     event.preventDefault();
     const conditions = document.getElementById('conditions');
-    const printBtn = document.getElementById('print')
     if (conditions && !(conditions as HTMLInputElement).checked) {
       alert('Kérlek fogadd el a felhasználási feltételeket')
     } else {
-      alert('Köszönjük a vásárlás, kattints a nyomtatás gombra');
-      (printBtn as HTMLElement).style.display = 'block';
+      setIsFormFilled(true);
     }
+
   }
 
   return (
@@ -24,11 +25,13 @@ const Order: React.FC = () => {
       <div id="inputContainer">
         <form onSubmit={handlePay}>
           <input className="narrowHomeBox textBox"
+            id="name"
             type="text"
             name="name"
             required
             placeholder="Neved" />
           <input className="narrowHomeBox textBox"
+            id="email"
             type="email"
             name="email"
             required
@@ -50,10 +53,12 @@ const Order: React.FC = () => {
               <Link to="/conditions">Elfogadom a felhasználási feltételeket</Link>
             </label>
           </fieldset>
-          <input
+          {!isFormFilled && <input
             className="btn smallBtn"
             type="submit"
-            value="Fizetés" />
+            value="Tovább a fizetésre" />
+          }
+          {isFormFilled && <Pay />}
         </form>
         <Link
           className="btn smallBtn"
@@ -64,7 +69,6 @@ const Order: React.FC = () => {
       <button
         id="print"
         className="btn smallBtn"
-        /* style={{ display: 'none' }} */
         onClick={printDocument}>Nyomtatás (teszt)</button>
     </section>
   )

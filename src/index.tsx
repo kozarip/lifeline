@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './styles/index.scss';
 import App from './app';
 import * as serviceWorker from './serviceWorker';
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 
 
 import { Auth0Provider } from './react-auth0-spa';
@@ -18,16 +20,26 @@ const onRedirectCallback = appState => {
       : window.location.pathname
   );
 };
+
+const options = {
+  position: positions.MIDDLE,
+  timeout: 5000,
+  offset: '20px',
+  transition: transitions.SCALE
+}
+
 ReactDOM.render(
-  <Auth0Provider
-    domain={config.domain}
-    client_id={config.clientId}
-    redirect_uri={window.location.origin}
-    // @ts-ignore
-    onRedirectCallback={onRedirectCallback}
-  >
-    <App />
-  </Auth0Provider>,
+  <AlertProvider template={AlertTemplate} {...options}>
+    <Auth0Provider
+      domain={config.domain}
+      client_id={config.clientId}
+      redirect_uri={window.location.origin}
+      // @ts-ignore
+      onRedirectCallback={onRedirectCallback}
+    >
+      <App />
+    </Auth0Provider>
+  </AlertProvider>,
   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

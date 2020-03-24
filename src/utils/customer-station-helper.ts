@@ -55,7 +55,5 @@ export function setAttributeForSelectedStation(
     return {
       customerStations: customerStations
     }
-  } else {
-    alert('Kérlek elősször válaszd ki a szerkeszteni kívánt állomást');
   }
 }

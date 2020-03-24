@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { printDocument } from 'utils/print';
 import Pay from './pay';
+import { useAlert } from 'react-alert'
 
 const Order: React.FC = () => {
 
   const [isFormFilled, setIsFormFilled] = useState(false);
+  const alert = useAlert();
 
   const handlePay = event => {
     event.preventDefault();
     const conditions = document.getElementById('conditions');
     if (conditions && !(conditions as HTMLInputElement).checked) {
-      alert('Kérlek fogadd el a felhasználási feltételeket')
+      alert.show('Kérlek fogadd el a felhasználási feltételeket')
     } else {
       setIsFormFilled(true);
     }
@@ -22,6 +24,7 @@ const Order: React.FC = () => {
     <section id="editorContainer" className="wideHomeBox">
       <h2 className="componentTitle">Kérlek add meg az adataidat</h2>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Ár: <span id="price">20</span><span id="currency">HUF</span></p>
       <div id="inputContainer">
         <form onSubmit={handlePay}>
           <input className="narrowHomeBox textBox"

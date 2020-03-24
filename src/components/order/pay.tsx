@@ -11,9 +11,10 @@ const Pay: React.FC = () => {
       <PayPalButton
         createOrder={(data, actions) => {
           const name = (document.getElementById('name') as HTMLInputElement).value.split(' ');
-          console.log((document.getElementById('name') as HTMLInputElement).value);
           const firstName = name[1] || '';
           const surName = name[0] || ''
+          const price = (document.getElementById('price') as HTMLInputElement).value || '10';
+          const currency = (document.getElementById('currency') as HTMLInputElement).value || 'HUF';
           const email = (document.getElementById('email') as HTMLInputElement).value || '';
           return actions.order.create({
             payer: {
@@ -26,8 +27,8 @@ const Pay: React.FC = () => {
             purchase_units: [{
               description: 'A Te mesélő képed',
               amount: {
-                currency_code: 'HUF',
-                value: '20'
+                currency_code: currency,
+                value: price
               }
             }],
             application_context: {
@@ -52,6 +53,10 @@ const Pay: React.FC = () => {
           currency: 'HUF',
           locale: 'hu_HU',
           clientId: clientId
+        }}
+        style={{
+          color: 'silver',
+          shape: 'pill'
         }}
       />
     </div>

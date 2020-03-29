@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IStationLister } from '../../interfaces/IStationLister';
-import { changeSelectedStationAttribute } from './store/actions';
+import { setSelectedStationAttribute } from './store/actions';
 import { useAlert } from 'react-alert';
 
 const StationLister: React.FC<IStationLister> = props => {
@@ -21,7 +21,7 @@ const StationLister: React.FC<IStationLister> = props => {
                 () => { props.selectFilter(item.name, 'category') } :
                 () => {
                   if (selectedStationId) {
-                    dispatch(changeSelectedStationAttribute('image', item.image))
+                    dispatch(setSelectedStationAttribute('image', item.image))
                   } else {
                     alert.show('Kérlek elősször válaszd ki a szerkeszteni kívánt állomást');
                   }

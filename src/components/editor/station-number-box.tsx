@@ -1,6 +1,6 @@
 import React,  {useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeStationNumber } from './store/actions'
+import { setStationNumber } from './store/actions'
 import { IStationNumberProps } from 'interfaces/IStationNumber';
 //import {reducer, initialState} from './store/reducers' ;
 
@@ -15,7 +15,7 @@ const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNum
     recommendedStationNumber
   ;
   const dispatch = useDispatch();
-  dispatch(changeStationNumber(stationNumber))
+  dispatch(setStationNumber(stationNumber))
   /**
    * TODO: use React contexAPI
    * const [state, dispatch] = useReducer(reducer, initialState);
@@ -24,17 +24,17 @@ const StationNumberBox: React.FC<IStationNumberProps> = ({ recommendedStationNum
 
   const handleStationInputEnter = (event: any) => {
     if (event.key === 'Enter') {
-      setStationNumber();
+      handleStationNumberChange();
     }
   }
 
-  const setStationNumber = () => {
+  const handleStationNumberChange = () => {
     const stationNumberInput = document.getElementById('stationNumber')
     const selectedStationNumber =
       stationNumberInput ?
         (stationNumberInput as HTMLInputElement).value :
         0
-    dispatch(changeStationNumber(selectedStationNumber))
+    dispatch(setStationNumber(selectedStationNumber))
   }
 
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import StationNumberBox from './station-number-box';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeStationNumber } from './store/actions';
+import { setStationNumber } from './store/actions';
 
 const AgeEditor: React.FC = () => {
 
@@ -23,7 +23,7 @@ const AgeEditor: React.FC = () => {
     if (ageInput) {
       age = parseInt((ageInput as HTMLInputElement).value);
       if (age > 0) {
-        dispatch(changeStationNumber(Math.floor(age / 2)));
+        dispatch(setStationNumber(Math.floor(age / 2)));
       }
 
     }

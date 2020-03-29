@@ -1,15 +1,14 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { THEMES } from 'constants/themes'
-import { changeSelectedThemeId } from 'components/editor/store/actions';
+import { setSelectedThemeId } from 'components/editor/store/actions';
 import StationLabelBox from './station-label-box';
 import MainTitleEditor from './main-title-editor';
 
 const Preview: React.FC = () => {
   const {
     themeId,
-    customerStations,
-    mainTitle,
+    customerStations
   } = useSelector(
     (state: any) => state
   );
@@ -29,7 +28,7 @@ const Preview: React.FC = () => {
     }
 
     selected.classList.add('selected')
-    dispatch(changeSelectedThemeId(selected.dataset.id))
+    dispatch(setSelectedThemeId(selected.dataset.id))
   }
 
   return (

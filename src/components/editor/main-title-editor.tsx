@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { changeMainTitle } from './store/actions';
+import { setMainTitle } from './store/actions';
 
 const MainTitleEditor: React.FC = () => {
   const dispatch = useDispatch()
@@ -13,7 +13,7 @@ const MainTitleEditor: React.FC = () => {
         value={ mainTitle }
         onChange={
           event => {
-            dispatch(changeMainTitle((event.target as HTMLInputElement).value));
+            dispatch(setMainTitle((event.target as HTMLInputElement).value));
           }
         }
         name="mainTitleEditor"

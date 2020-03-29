@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeSelectedStationAttribute } from './store/actions';
+import { setSelectedStationAttribute } from './store/actions';
 import { IStationLabelProps } from '../../interfaces/IStationLabel';
 
 const StationLabelBox: React.FC<IStationLabelProps> = props => {
@@ -24,7 +24,7 @@ const StationLabelBox: React.FC<IStationLabelProps> = props => {
         onChange={
           event => {
             dispatch(
-              changeSelectedStationAttribute(props.type, (event.target as HTMLInputElement).value)
+              setSelectedStationAttribute(props.type, (event.target as HTMLInputElement).value)
             )
           }
         }

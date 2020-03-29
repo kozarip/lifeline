@@ -11,7 +11,7 @@ import ImagePicker from 'react-image-picker'
 import 'react-image-picker/dist/index.css'
 
 import { THEMES } from 'constants/themes';
-import { changeTheme } from './store/actions';
+import { setTheme } from './store/actions';
 import AgeEditor from './age-editor';
 
 //TODO: move to an own;
@@ -20,7 +20,7 @@ const ThemeSelector: React.FC = () => {
   return (
     <ThemeSelectorBox
       saveSelectedTheme={ themeId => {
-        dispatch(changeTheme(themeId))
+        dispatch(setTheme(themeId))
       }}
     />
   )

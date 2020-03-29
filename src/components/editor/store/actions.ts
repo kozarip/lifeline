@@ -6,37 +6,37 @@
  * station : [{image,text}...]
  */
 
-export function changeTheme(themeId) {
+export function setTheme(themeId) {
   return {
-    type: 'Change_Theme_Image_Src',
+    type: 'Set_Theme_Image_Src',
     themeId: { themeId }
   }
 }
 
-export function changeStationNumber(stationNumber) {
+export function setStationNumber(stationNumber) {
   return {
-    type: 'Change_Station_Number',
+    type: 'Set_Station_Number',
     stationNumber: { stationNumber },
   }
 }
 
-export function changeMainTitle(mainTitle) {
+export function setMainTitle(mainTitle) {
   return {
-    type: 'Change_Main_Title',
+    type: 'Set_Main_Title',
     mainTitle: { mainTitle }
   }
 }
 
-export function changeSelectedThemeId(selectedStationId) {
+export function setSelectedThemeId(selectedStationId) {
   return {
-    type: 'Change_Selected_Station_Id',
+    type: 'Set_Selected_Station_Id',
     selectedStationId: {selectedStationId},
   }
 }
 
-export function changeSelectedStationAttribute(type, attribute) {
+export function setSelectedStationAttribute(type, attribute) {
   return {
-    type: 'Change_Selected_Station_Attribute',
+    type: 'Set_Selected_Station_Attribute',
     attribute: { [type]: attribute },
   }
 }
